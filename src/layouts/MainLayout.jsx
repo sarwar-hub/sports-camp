@@ -8,7 +8,7 @@ const MainLayout = () => {
     return (
         <div>
             <Navbar></Navbar>
-            <div className="py-10">
+            <div className="max-w-[1480px] mx-auto">
             <Outlet></Outlet>
             </div>
             <Footer></Footer>

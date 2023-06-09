@@ -1,4 +1,4 @@
 ## Installed Packages
 + React router
 + Tailwindcss
-+ MUI
++ DaisyUI

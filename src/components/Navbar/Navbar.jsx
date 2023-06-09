@@ -5,14 +5,14 @@ import ActiveLink from "../ActiveLink/ActiveLink";
 const navItems = [
   <li className="hover:text-sec font-semibold transition"><ActiveLink to='/'>Home</ActiveLink></li>,
   <li className="hover:text-sec font-semibold transition"><ActiveLink to='/contact'>Instructors</ActiveLink></li>,
-  <li className="hover:text-sec font-semibold transition"><ActiveLink to='/dashboard'>Classes</ActiveLink></li>,
+  <li className="hover:text-sec font-semibold transition"><ActiveLink to='/dashboard'>Courses</ActiveLink></li>,
   <li className="hover:text-sec font-semibold transition"><ActiveLink to='/menu'>Dashboard</ActiveLink></li>,
 ];
 
 const Navbar = () => {
 
   return (
-    <div className="drawer bg-dark fixed z-10">
+    <div className="drawer bg-dark/50 fixed z-10">
 
       <input id="my-drawer-3" type="checkbox" className="drawer-toggle" />
       <div className="drawer-content flex flex-col">
