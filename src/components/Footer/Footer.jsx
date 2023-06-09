@@ -16,7 +16,7 @@ const Footer = () => {
                     icons
                 </div>
             </div>
-            <hr className="my-5"/>
+            <hr className="my-5 max-w-[1480px] mx-auto"/>
             <p className='text-center'>Copyright 2023 © Sports Camp | All rights reserved</p>
         </div>
     );
