@@ -1,10 +1,17 @@
-import Home from "../pages/Home/Home/Home";
+import { Outlet } from "react-router-dom";
+import Navbar from "../components/Navbar/Navbar";
+import Footer from "../components/Footer/Footer";
+
 
 
 const MainLayout = () => {
     return (
         <div>
-            <Home></Home>
+            <Navbar></Navbar>
+            <div className="py-10">
+            <Outlet></Outlet>
+            </div>
+            <Footer></Footer>
         </div>
     );
 };
