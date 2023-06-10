@@ -1,5 +1,5 @@
 
-const CourseCard = ({course}) => {
+const TopCourseCard = ({course}) => {
     return (
         <div className="card w-full bg-dark text-light rounded-none shadow-xl">
             <div className="card-body">
@@ -11,4 +11,4 @@ const CourseCard = ({course}) => {
     );
 };
 
-export default CourseCard;
+export default TopCourseCard;
