@@ -1,6 +1,6 @@
 
 const TopInstructorCard = ({instructor}) => {
-    console.log(instructor);
+    
     return (
         <div className="card w-full bg-dark text-light rounded-none shadow-xl">
             <figure><img src={instructor.photo} alt="instructor photo" /></figure>

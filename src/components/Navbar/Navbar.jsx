@@ -51,10 +51,11 @@ const Navbar = () => {
           <div className="ml-5 dropdown dropdown-end text-light">
             <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
               <div className="w-10 rounded-full">
-                <img src="" />
+                <img src={user?.photoURL} />
               </div>
             </label>
             <ul tabIndex={0} className="mt-3 p-2 text-center shadow menu menu-sm dropdown-content bg-dark w-52">
+              <p className="text-sec p-2">{user?.displayName}</p>
               <Link className="hover:text-sec hover:bg-dark2 p-2">Profile</Link>
               <button onClick={handleLogout} className="hover:text-red-600 hover:bg-dark2 p-2">Logout</button>
             </ul>
