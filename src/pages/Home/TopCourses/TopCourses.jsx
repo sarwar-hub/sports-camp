@@ -11,7 +11,7 @@ const TopCourses = () => {
     const [allCourses] = useCourses();
    
     return (
-        <div className="section">
+        <div className="">
             <SectionTitle>Top Courses</SectionTitle>
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-7">
                 {/* top courses */}

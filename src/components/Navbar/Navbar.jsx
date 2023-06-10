@@ -4,9 +4,9 @@ import ActiveLink from "../ActiveLink/ActiveLink";
 
 const navItems = [
   <li className="hover:text-sec font-semibold transition"><ActiveLink to='/'>Home</ActiveLink></li>,
-  <li className="hover:text-sec font-semibold transition"><ActiveLink to='/contact'>Instructors</ActiveLink></li>,
-  <li className="hover:text-sec font-semibold transition"><ActiveLink to='/dashboard'>Courses</ActiveLink></li>,
-  <li className="hover:text-sec font-semibold transition"><ActiveLink to='/menu'>Dashboard</ActiveLink></li>,
+  <li className="hover:text-sec font-semibold transition"><ActiveLink to='/instructors'>Instructors</ActiveLink></li>,
+  <li className="hover:text-sec font-semibold transition"><ActiveLink to='/courses'>Courses</ActiveLink></li>,
+  <li className="hover:text-sec font-semibold transition"><ActiveLink to='/dashboard'>Dashboard</ActiveLink></li>,
 ];
 
 const Navbar = () => {

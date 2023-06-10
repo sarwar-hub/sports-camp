@@ -1,7 +1,7 @@
 
 const Status = () => {
     return (
-        <div className="section">
+        <div className="">
             <div className="stats w-full  stats-vertical lg:stats-horizontal shadow bg-dark rounded-none">
 
                 <div className="stat place-items-center">

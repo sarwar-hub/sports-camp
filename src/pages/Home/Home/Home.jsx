@@ -10,10 +10,20 @@ const Home = () => {
     return (
         <div className="">
             <Banner></Banner>
-            <TopCourses></TopCourses>
-            <TopInstructors></TopInstructors>
-            <Status></Status>
-            <Newsletter></Newsletter>
+            <div className="my-16">
+                <div className="mx-2 my-5 md:mx-10 md:my-10">
+                    <TopCourses></TopCourses>
+                </div>
+                <div className="mx-2 my-5 md:mx-10 md:my-10">
+                    <TopInstructors></TopInstructors>
+                </div>
+                <div className="mx-2 my-5 md:mx-10 md:my-10">
+                    <Status></Status>
+                </div>
+                <div className="mx-2 my-5 md:mx-10 md:my-10">
+                    <Newsletter></Newsletter>
+                </div>
+            </div>
         </div>
     );
 };

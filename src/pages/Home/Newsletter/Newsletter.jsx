@@ -1,9 +1,9 @@
 import newsletterbg from '../../../assets/newsletterbg.jpg';
 const Newsletter = () => {
     return (
-        <div className='section'>
+        <div className=''>
             <div className="hero bg-fixed" style={{ backgroundImage: `url(${newsletterbg})` }}>
-                <div className="hero-overlay bg-opacity-60"></div>
+                <div className="hero-overlay bg-opacity-80"></div>
                 <div className="hero-content text-center text-neutral-content">
                     <div className="max-w-md">
                         <h1 className="mb-5 text-5xl text-light font-bold">Subscribe Now</h1>
