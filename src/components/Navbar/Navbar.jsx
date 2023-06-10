@@ -1,5 +1,7 @@
 import { Link } from "react-router-dom";
 import ActiveLink from "../ActiveLink/ActiveLink";
+import { useContext } from "react";
+import { AuthContext } from "../../context/AuthProvider";
 
 
 const navItems = [
@@ -10,6 +12,12 @@ const navItems = [
 ];
 
 const Navbar = () => {
+
+  const {logout, user} = useContext(AuthContext);
+
+  const handleLogout = async() => {
+    await logout();
+  }
 
   return (
     <div className="drawer bg-dark/50 fixed z-10">
@@ -33,8 +41,14 @@ const Navbar = () => {
 
             </ul>
           </div>
-          {/* user */}
-          <div className="dropdown dropdown-end text-light">
+          {/* login button and user profile */}
+          {!user
+          ?
+          <div className="mx-5">
+            <Link to='/login'><button className="bg-transparent px-2 py-1 text-light font-semibold border-[1px] border-light hover:text-sec hover:border-sec hover:bg-sec/10">Login</button></Link>
+          </div>
+          :
+          <div className="ml-5 dropdown dropdown-end text-light">
             <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
               <div className="w-10 rounded-full">
                 <img src="" />
@@ -42,9 +56,10 @@ const Navbar = () => {
             </label>
             <ul tabIndex={0} className="mt-3 p-2 text-center shadow menu menu-sm dropdown-content bg-dark w-52">
               <Link className="hover:text-sec hover:bg-dark2 p-2">Profile</Link>
-              <button className="hover:text-red-600 hover:bg-dark2 p-2">Logout</button>
+              <button onClick={handleLogout} className="hover:text-red-600 hover:bg-dark2 p-2">Logout</button>
             </ul>
           </div>
+          }
 
         </div>
 

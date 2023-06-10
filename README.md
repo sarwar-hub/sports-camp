@@ -2,3 +2,4 @@
 + React router
 + Tailwindcss
 + DaisyUI
++ Firebase
