@@ -9,7 +9,6 @@ const CourseCard = ({ course }) => {
 
     // current user
     const [currentUser] = useUser();
-    console.log(currentUser);
 
     // location
     //const location = useLocation();
