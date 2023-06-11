@@ -6,7 +6,7 @@ const TopInstructorCard = ({instructor}) => {
             <figure><img src={instructor.photo} alt="instructor photo" /></figure>
             <div className="card-body">
                 <h2 className="card-title">{instructor.name}</h2>
-                <p>{instructor.numberOfStudents} Students</p>
+                <p>Students: {instructor.numberOfStudents}</p>
             </div>
         </div>
     );

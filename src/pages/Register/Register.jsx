@@ -46,7 +46,7 @@ const Register = () => {
                 .then(res => res.json())
                 .then(data => {
                     if (data.insertedId) {
-
+                        setLoader(false);
                         Swal.fire({
                             position: 'top-center',
                             icon: 'success',
@@ -56,14 +56,16 @@ const Register = () => {
                           })
 
                         reset();
-                        setLoader(false);
+                        
                         navigate(from, {replace: true});
                     }
                 })
                 .catch(err => {
+                    setLoader(false);
                     console.log(err.message)
                 })
         } catch (err) {
+            setLoader(false);
             setError(err.message);
         }
 
@@ -78,7 +80,7 @@ const Register = () => {
                 <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col gap-y-10">
                     <div className="flex justify-between gap-x-5">
                         <div className="w-full">
-                            {error && <span className="text-red-500 p-1">* {error}</span>}
+                            
                             <label className="text-light mb-2 block">Name *</label>
 
 
@@ -102,6 +104,7 @@ const Register = () => {
 
 
                         <input {...register('email', { required: true })} className=" p-3 w-full text-light bg-dark2 outline-none " type="email" name="email" placeholder="Email" />
+                        {error && <span className="text-red-500 p-1">* {error}</span>}
                         {errors.email && <span className="text-red-500 p-1">* Email is required</span>}
 
 

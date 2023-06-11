@@ -1,10 +1,15 @@
 import { useContext } from "react";
-import { useNavigate} from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { AuthContext } from "../../../context/AuthProvider";
 import Swal from "sweetalert2";
+import useUser from "../../../hooks/useUser";
 
 
 const CourseCard = ({ course }) => {
+
+    // current user
+    const [currentUser] = useUser();
+    console.log(currentUser);
 
     // location
     //const location = useLocation();
@@ -49,7 +54,9 @@ const CourseCard = ({ course }) => {
                 </div>
             </div>
             <div>
-                <button onClick={checkValidity} className={`${course.availableSeats == 0 && 'btn-disabled'} w-full py-2 bg-dark2`}>Add to wishlist</button>
+                <button onClick={checkValidity} className={`
+                ${(course.availableSeats == 0 || currentUser.role == 'instructor' || currentUser.role == 'admin') 
+                && 'btn-disabled'} w-full py-2 bg-dark2`}>Add to wishlist</button>
             </div>
         </div>
     );

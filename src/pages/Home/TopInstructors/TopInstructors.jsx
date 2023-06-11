@@ -12,7 +12,7 @@ const TopInstructors = () => {
     return (
         <div className="">
             <SectionTitle>Top Instructors</SectionTitle>
-            <div className="grid grid-cols-1 sm:grid-cols-3 md:grid-cols-4 gap-7">
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-7">
                 {/* top instructors */}
                 {
                     topInstructors.map(instructor => <TopInstructorCard key={instructor._id} instructor={instructor}></TopInstructorCard>)
