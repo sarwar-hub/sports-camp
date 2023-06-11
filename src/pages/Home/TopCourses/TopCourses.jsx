@@ -21,7 +21,7 @@ const TopCourses = () => {
             </div>
             {/* view all button */}
             <div className="text-center mt-5">
-                <Link to='/allCourses'><PrimaryBtn>View all Courses</PrimaryBtn></Link>
+                <Link to='/courses'><PrimaryBtn>View all Courses</PrimaryBtn></Link>
             </div>
         </div>
     );

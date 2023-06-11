@@ -20,7 +20,7 @@ const TopInstructors = () => {
             </div>
             {/* view all button */}
             <div className="text-center mt-5">
-                <Link to='/allInstructors'><PrimaryBtn>View all Instructors</PrimaryBtn></Link>
+                <Link to='/instructors'><PrimaryBtn>View all Instructors</PrimaryBtn></Link>
             </div>
         </div>
     );
