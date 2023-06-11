@@ -3,3 +3,5 @@
 + Tailwindcss
 + DaisyUI
 + Firebase
++ React icons
++ Sweet alert2
