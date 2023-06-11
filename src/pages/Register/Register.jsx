@@ -1,36 +1,71 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate, useLocation } from "react-router-dom";
 import SectionTitle from "../../components/SectionTitle/SectionTitle";
 import { useForm } from "react-hook-form";
 import { useContext, useState } from "react";
 import { AuthContext } from "../../context/AuthProvider";
+import Swal from "sweetalert2";
 
 const Register = () => {
 
     const [isMatch, setIsMatch] = useState(true);
     const [error, setError] = useState('');
-    
-    const {registerUser, updateNamePhoto, loader} = useContext(AuthContext);
 
-    const { register, handleSubmit, formState: { errors } } = useForm();
-    const onSubmit = async(data) => {
+    // location and navigate
+    const navigate = useNavigate();
+    const location = useLocation();
+    const from = location.state?.from.pathname || '/';
+    console.log(location);
 
-        if(data.password !== data.confirmPassword) {
+    // data from context
+    const { registerUser, updateNamePhoto, loader, setLoader } = useContext(AuthContext);
+
+    // hook form
+    const { register, handleSubmit, reset, formState: { errors } } = useForm();
+
+
+    // on form submit
+    const onSubmit = async (data) => {
+
+        if (data.password !== data.confirmPassword) {
             return setIsMatch(false);
         } else {
             setIsMatch(true);
         }
 
         // register user
-        try{
+        try {
             await registerUser(data.email, data.password);
             await updateNamePhoto(data.name, data.photo);
-            //navigate(from, {replace:true});
-        }catch(err){
+
+            const userInfo = { name: data.name, email: data.email, photo: data.photo, role: 'student' };
+            fetch('http://localhost:5000/users', {
+                method: 'POST',
+                headers: { 'content-type': 'application/json' },
+                body: JSON.stringify(userInfo)
+            })
+                .then(res => res.json())
+                .then(data => {
+                    if (data.insertedId) {
+
+                        Swal.fire({
+                            position: 'top-center',
+                            icon: 'success',
+                            title: 'Account created successfully',
+                            showConfirmButton: false,
+                            timer: 1500
+                          })
+
+                        reset();
+                        setLoader(false);
+                        navigate(from, {replace: true});
+                    }
+                })
+                .catch(err => {
+                    console.log(err.message)
+                })
+        } catch (err) {
             setError(err.message);
         }
-
-
-        console.log(data)
 
 
 
@@ -77,7 +112,10 @@ const Register = () => {
 
 
                             <input {...register('password', { required: true, minLength: 6, maxLength: 20, pattern: /(?=.*[A-Z])(?=.*[!@#$&*])/ })} className=" p-3 w-full text-light bg-dark2 outline-none " type="password" name="password" placeholder="Password" />
-
+                            {errors.password?.type === 'required' && <span className="text-red-500 p-1">* Enter a passowrd.</span>}
+                            {errors.password?.type === 'minLength' && <span className="text-red-500 p-1">* Password should be at least 6 characters.</span>}
+                            {errors.password?.type === 'maxLength' && <span className="text-red-500 p-1">* Password should not be more then 20 characters.</span>}
+                            {errors.password?.type === 'pattern' && <span className="text-red-500 p-1">* Password should contain one uppercase and one cpecial character.</span>}
 
 
                         </div>
@@ -91,10 +129,6 @@ const Register = () => {
 
                         </div>
                     </div>
-                    {errors.password?.type === 'required' && <span className="text-red-500 p-1">* Enter a passowrd.</span>}
-                    {errors.password?.type === 'minLength' && <span className="text-red-500 p-1">* Password should be at least 6 characters.</span>}
-                    {errors.password?.type === 'maxLength' && <span className="text-red-500 p-1">* Password should not be more then 20 characters.</span>}
-                    {errors.password?.type === 'pattern' && <span className="text-red-500 p-1">* Password should contain one uppercase and one cpecial character.</span>}
 
                     {/* register button */}
                     <button type="submit" className="bg-dark2 px-4 py-2 text-light font-semibold border-[1px] border-light hover:bg-dark2/50">{loader ? 'Loading...' : 'Register'}</button>

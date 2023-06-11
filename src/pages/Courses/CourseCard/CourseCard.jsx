@@ -36,7 +36,7 @@ const CourseCard = ({ course }) => {
         }
     }
     return (
-        <div className="card w-full bg-dark text-light rounded-none shadow-xl">
+        <div className={`${course.availableSeats == 0 ? 'bg-red-500' : 'bg-dark'} card w-full bg-dark text-light rounded-none shadow-xl`}>
             <figure><img src={course.thumbnail} alt="course thumb" /></figure>
             <div className="p-5 flex justify-between">
                 <div>
@@ -49,7 +49,7 @@ const CourseCard = ({ course }) => {
                 </div>
             </div>
             <div>
-                <button onClick={checkValidity} className="w-full py-2 bg-dark2 ">Add to wishlist</button>
+                <button onClick={checkValidity} className={`${course.availableSeats == 0 && 'btn-disabled'} w-full py-2 bg-dark2`}>Add to wishlist</button>
             </div>
         </div>
     );
