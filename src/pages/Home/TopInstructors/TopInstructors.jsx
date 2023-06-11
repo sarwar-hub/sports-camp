@@ -7,7 +7,7 @@ import TopInstructorCard from "./TopInstructorCard/TopInstructorCard";
 const TopInstructors = () => {
 
     // istructors from useInstrunctors hook
-    const [allInstructors] = useInstructors();
+    const [, topInstructors] = useInstructors();
 
     return (
         <div className="">
@@ -15,7 +15,7 @@ const TopInstructors = () => {
             <div className="grid grid-cols-1 sm:grid-cols-3 md:grid-cols-4 gap-7">
                 {/* top instructors */}
                 {
-                    allInstructors.map(instructor => <TopInstructorCard key={instructor._id} instructor={instructor}></TopInstructorCard>)
+                    topInstructors.map(instructor => <TopInstructorCard key={instructor._id} instructor={instructor}></TopInstructorCard>)
                 }
             </div>
             {/* view all button */}
