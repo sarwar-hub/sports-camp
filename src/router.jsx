@@ -11,6 +11,8 @@ import DashboardHome from "./pages/Dashboard/DashboardHome";
 import SelectedCourses from "./pages/Dashboard/SelectedCourses/SelectedCourses";
 import AddCourse from "./pages/Dashboard/AddCourse/AddCourse";
 import MyCourses from "./pages/Dashboard/MyCourses/MyCourses";
+import ManageCourses from "./pages/Dashboard/ManageCourses/ManageCourses";
+import ManageUsers from "./pages/Dashboard/ManageUsers/ManageUsers";
 
 
 const router = createBrowserRouter([
@@ -67,6 +69,14 @@ const router = createBrowserRouter([
             {
                 path: '/dashboard/myCourses',
                 element: <MyCourses></MyCourses>
+            },
+            {
+                path: '/dashboard/manageCourses',
+                element: <ManageCourses></ManageCourses>
+            },
+            {
+                path: '/dashboard/manageUsers',
+                element: <ManageUsers></ManageUsers>
             },
         ]
     }
