@@ -9,7 +9,7 @@ const InstructorCard = ({ instructor }) => {
                 <div className="space-y-5">
                     <div>
                         <h2 className="card-title">{instructor.name}</h2>
-                        <p className=" flex items-center gap-x-2"><FaEnvelope className=""></FaEnvelope> <span>{instructor.email}</span></p>
+                        <p className="text-sm text-gray flex items-center gap-x-2"><div><FaEnvelope></FaEnvelope></div> <span>{instructor.email}</span></p>
                     </div>
                     <div className="flex justify-between items-center">
                         <p>Students: {instructor.numberOfStudents} </p>

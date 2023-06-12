@@ -2,6 +2,8 @@
 import ActiveLink2 from '../components/ActiveLink/ActiveLink2';
 import { FaList, FaCheckSquare, FaPlusSquare, FaCogs, FaUsersCog, FaStream, FaCreditCard } from "react-icons/fa";
 import { HiX } from "react-icons/hi";
+import { Outlet } from 'react-router-dom';
+import dbbg from '../assets/dbbg.svg';
 const DashboardLayout = () => {
     return (
         <div>
@@ -12,16 +14,16 @@ const DashboardLayout = () => {
 
             <div className="drawer lg:drawer-open">
                 <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
-                <div className="drawer-content flex flex-col items-center justify-center">
+                <div className="drawer-content flex flex-col items-center justify-center" style={{backgroundImage: `url(${dbbg})`, backgroundSize: 'cover'}}>
                     {/* Page content here */}
-                    
+                    <Outlet></Outlet>
 
                 </div>
                 <div className="drawer-side">
                     <label htmlFor="my-drawer-2" className="drawer-overlay"></label>
                     <div className="p-4 w-80 h-full bg-dark2">
                         {/* Sidebar content here */}
-                        <div className='flex justify-end'>
+                        <div className='flex justify-end lg:hidden'>
                             <label htmlFor="my-drawer-2" className="drawer-overlay"><HiX></HiX></label>
                         </div>
                         <div>

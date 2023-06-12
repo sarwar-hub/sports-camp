@@ -18,9 +18,30 @@ const CourseCard = ({ course }) => {
     const { user } = useContext(AuthContext);
 
     // check if the user logged in or not
-    const checkValidity = () => {
+    const handleSelectCourse = () => {
         if (user) {
-            return;
+            // add selected item into database
+            const itemInfo = { courseId: course._id, userEmail: user.email };
+            fetch('http://localhost:5000/selectedItems', {
+                method: 'POST',
+                headers: { 'content-type': 'application/json' },
+                body: JSON.stringify(itemInfo)
+            })
+                .then(res => res.json())
+                .then(data => {
+                    if (data.insertedId) {
+                        Swal.fire({
+                            position: 'top-center',
+                            icon: 'success',
+                            title: 'Added to Selected',
+                            showConfirmButton: false,
+                            timer: 1500
+                        })
+                    }
+                })
+                .catch(err => {
+                    console.log(err.message);
+                })
         }
         else {
             Swal.fire({
@@ -53,9 +74,9 @@ const CourseCard = ({ course }) => {
                 </div>
             </div>
             <div>
-                <button onClick={checkValidity} className={`
-                ${(course.availableSeats == 0 || currentUser.role == 'instructor' || currentUser.role == 'admin') 
-                && 'btn-disabled'} w-full py-2 bg-dark2`}>Add to wishlist</button>
+                <button onClick={handleSelectCourse} className={`
+                ${(course.availableSeats == 0 || currentUser.role == 'instructor' || currentUser.role == 'admin')
+                    && 'btn-disabled'} w-full py-2 bg-dark2`}>Select the Course</button>
             </div>
         </div>
     );

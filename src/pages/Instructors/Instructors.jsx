@@ -7,7 +7,7 @@ import InstructorCard from "./InstructorCard/InstructorCard";
 const Instructors = () => {
 
     // course from useCourse hook
-    const [allInstructors] = useInstructors();
+    const [allInstructors, topInstructors] = useInstructors();
 
     return (
         <div className="mb-16">
