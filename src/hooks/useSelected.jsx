@@ -14,7 +14,7 @@ const useSelected = () => {
     
         for (const courseItem of selected) {
 
-            const matchedItem = allCourses.find(course => course._id === courseItem.courseId);
+            const matchedItem = allCourses?.find(course => course._id === courseItem.courseId);
 
             selectedItems.push(matchedItem);
         }

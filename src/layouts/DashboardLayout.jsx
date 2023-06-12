@@ -2,7 +2,7 @@
 import ActiveLink2 from '../components/ActiveLink/ActiveLink2';
 import { FaList, FaCheckSquare, FaPlusSquare, FaCogs, FaUsersCog, FaStream, FaCreditCard } from "react-icons/fa";
 import { HiX } from "react-icons/hi";
-import { Outlet } from 'react-router-dom';
+import { Link, Outlet } from 'react-router-dom';
 import dbbg from '../assets/dbbg.svg';
 const DashboardLayout = () => {
     return (
@@ -28,6 +28,7 @@ const DashboardLayout = () => {
                         </div>
                         <div>
                             <h1 className='text-4xl mb-3 text-light/50 font-bold uppercase'>Sports Camp</h1> 
+                            <Link to='/'><span className='text-sec hover:underline'>← Back to Home</span></Link>
                         </div>
                         <div className='mt-10 ml-2'>
                             <div className='text-gray hover:translate-x-3 py-2 hover:text-light transition'> <ActiveLink2 to='/dashboard/selectedCourses'><div className='flex items-center gap-x-2'><FaList></FaList> <span>Selected Courses</span></div></ActiveLink2></div>
