@@ -5,9 +5,9 @@ import Login from "./pages/Login/Login";
 import Register from "./pages/Register/Register";
 import Courses from "./pages/Courses/Courses";
 import DashboardLayout from "./layouts/DashboardLayout";
-import Dashboard from "./pages/Dashboard/Dashboard";
 import PrivateRoute from "./privateRoute/privateRoute";
 import Instructors from "./pages/Instructors/Instructors";
+import DashboardHome from "./pages/Dashboard/DashboardHome";
 
 
 const router = createBrowserRouter([
@@ -43,7 +43,7 @@ const router = createBrowserRouter([
         children: [
             {
                 path: '/dashboard/home',
-                element: <Dashboard></Dashboard>
+                element: <DashboardHome></DashboardHome>
             }
         ]
     }

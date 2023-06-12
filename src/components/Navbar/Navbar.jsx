@@ -8,7 +8,7 @@ const navItems = [
   <li className="hover:text-sec font-semibold transition"><ActiveLink to='/'>Home</ActiveLink></li>,
   <li className="hover:text-sec font-semibold transition"><ActiveLink to='/instructors'>Instructors</ActiveLink></li>,
   <li className="hover:text-sec font-semibold transition"><ActiveLink to='/courses'>Courses</ActiveLink></li>,
-  <li className="hover:text-sec font-semibold transition"><ActiveLink to='/dashboard'>Dashboard</ActiveLink></li>,
+  <li className="hover:text-sec font-semibold transition"><ActiveLink to='/dashboard/home'>Dashboard</ActiveLink></li>,
 ];
 
 const Navbar = () => {
