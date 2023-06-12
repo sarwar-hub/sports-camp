@@ -10,14 +10,21 @@ const useSelected = () => {
     const selectedItems = [];
 
     // get all courses
-    const [allCourses, ] = useCourses();
-    
+    const [allCourses, , ] = useCourses();
+
+ 
+
+        
         for (const courseItem of selected) {
-
-            const matchedItem = allCourses?.find(course => course._id === courseItem.courseId);
-
-            selectedItems.push(matchedItem);
+            
+            const matchedItem = allCourses?.find(course => course?._id === courseItem.courseId);
+            
+            if(matchedItem) {
+                selectedItems.push(matchedItem);
+            }
         }
+
+   
     
 
 

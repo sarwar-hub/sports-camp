@@ -8,7 +8,7 @@ import TopCourseCard from "./TopCourseCard/TopCourseCard";
 const TopCourses = () => {
 
     // course from useCourse hook
-    const [, topCourses] = useCourses();
+    const [, topCourses, ] = useCourses();
    
     return (
         <div className="">

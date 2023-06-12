@@ -10,6 +10,7 @@ import Instructors from "./pages/Instructors/Instructors";
 import DashboardHome from "./pages/Dashboard/DashboardHome";
 import SelectedCourses from "./pages/Dashboard/SelectedCourses/SelectedCourses";
 import AddCourse from "./pages/Dashboard/AddCourse/AddCourse";
+import MyCourses from "./pages/Dashboard/MyCourses/MyCourses";
 
 
 const router = createBrowserRouter([
@@ -62,6 +63,10 @@ const router = createBrowserRouter([
             {
                 path: '/dashboard/addCourse',
                 element: <AddCourse></AddCourse>
+            },
+            {
+                path: '/dashboard/myCourses',
+                element: <MyCourses></MyCourses>
             },
         ]
     }

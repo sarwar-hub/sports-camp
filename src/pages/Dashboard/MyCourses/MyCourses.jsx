@@ -1,13 +1,13 @@
 import SectionTitle from "../../../components/SectionTitle/SectionTitle";
-import useSelected from "../../../hooks/useSelected";
+import useCourses from "../../../hooks/useCourses";
 import CourseRow from "./CourseRow/CourseRow";
 
-const SelectedCourses = () => {
+const MyCourses = () => {
     // selected courses
-    const [selectedCourses] = useSelected();
+    const [, , coursesByInstructor] = useCourses();
     return (
         <div>
-            <SectionTitle>My Selected Courses</SectionTitle>
+            <SectionTitle>My Courses</SectionTitle>
             <div className="overflow-x-auto">
                 <table className="table">
                     {/* head */}
@@ -15,13 +15,14 @@ const SelectedCourses = () => {
                         <tr className="text-light">
                             <th>SL</th>
                             <th>Course</th>
-                            <th>Instructor</th>
-                            <th>Actions</th>
+                            <th>Price</th>
+                            <th>Students</th>
+                            <th>Status</th>
                         </tr>
                     </thead>
                     <tbody>
                         {
-                            selectedCourses?.map((course, index) => <CourseRow key={course?._id} course={course} index={index}></CourseRow>)
+                            coursesByInstructor?.map((course, index) => <CourseRow key={course._id} course={course} index={index}></CourseRow>)
                         }
                     </tbody>
                 </table>
@@ -31,4 +32,4 @@ const SelectedCourses = () => {
     );
 };
 
-export default SelectedCourses;
+export default MyCourses;

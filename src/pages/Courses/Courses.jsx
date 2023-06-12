@@ -7,7 +7,7 @@ import CourseCard from "./CourseCard/CourseCard";
 const Courses = () => {
 
     // course from useCourse hook
-    const [allCourses, topCourses] = useCourses();
+    const [allCourses, , ] = useCourses();
 
     return (
         <div className="mb-16">
