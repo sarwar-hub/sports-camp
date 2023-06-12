@@ -30,17 +30,17 @@ const DashboardLayout = () => {
                             <h1 className='text-4xl mb-3 text-light/50 font-bold uppercase'>Sports Camp</h1> 
                         </div>
                         <div className='mt-10 ml-2'>
-                            <div className='hover:translate-x-3 py-2 hover:text-light transition'> <ActiveLink2 to='/dashboard/selectedCourses'><div className='flex items-center gap-x-2'><FaList></FaList> <span>Selected Courses</span></div></ActiveLink2></div>
-                            <div className='hover:translate-x-3 py-2 hover:text-light transition'> <ActiveLink2 to='/dashboard/enrolledCourses'><div className='flex items-center gap-x-2'><FaCheckSquare></FaCheckSquare> <span>Enrolled Courses</span></div></ActiveLink2></div>
-                            <div className='hover:translate-x-3 py-2 hover:text-light transition'> <ActiveLink2 to='/dashboard/enrolledCourses'><div className='flex items-center gap-x-2'><FaCreditCard></FaCreditCard> <span>Payment History</span></div></ActiveLink2></div>
+                            <div className='text-gray hover:translate-x-3 py-2 hover:text-light transition'> <ActiveLink2 to='/dashboard/selectedCourses'><div className='flex items-center gap-x-2'><FaList></FaList> <span>Selected Courses</span></div></ActiveLink2></div>
+                            <div className='text-gray hover:translate-x-3 py-2 hover:text-light transition'> <ActiveLink2 to='/dashboard/enrolledCourses'><div className='flex items-center gap-x-2'><FaCheckSquare></FaCheckSquare> <span>Enrolled Courses</span></div></ActiveLink2></div>
+                            <div className='text-gray hover:translate-x-3 py-2 hover:text-light transition'> <ActiveLink2 to='/dashboard/enrolledCourses'><div className='flex items-center gap-x-2'><FaCreditCard></FaCreditCard> <span>Payment History</span></div></ActiveLink2></div>
                         </div>
                         <div className='mt-10 ml-2'>
-                            <div className='hover:translate-x-3 py-2 hover:text-light transition'> <ActiveLink2 to='/dashboard/addCourse'><div className='flex items-center gap-x-2'><FaPlusSquare></FaPlusSquare> <span>Add New Course</span></div></ActiveLink2></div>
-                            <div className='hover:translate-x-3 py-2 hover:text-light transition'> <ActiveLink2 to='/dashboard/myCourses'><div className='flex items-center gap-x-2'><FaList></FaList> <span>My Courses</span></div></ActiveLink2></div>
+                            <div className='text-gray hover:translate-x-3 py-2 hover:text-light transition'> <ActiveLink2 to='/dashboard/addCourse'><div className='flex items-center gap-x-2'><FaPlusSquare></FaPlusSquare> <span>Add New Course</span></div></ActiveLink2></div>
+                            <div className='text-gray hover:translate-x-3 py-2 hover:text-light transition'> <ActiveLink2 to='/dashboard/myCourses'><div className='flex items-center gap-x-2'><FaList></FaList> <span>My Courses</span></div></ActiveLink2></div>
                         </div>
                         <div className='mt-10 ml-2'>
-                            <div className='hover:translate-x-3 py-2 hover:text-light transition'> <ActiveLink2 to='/dashboard/manageCourses'><div className='flex items-center gap-x-2'><FaCogs></FaCogs> <span>Manage Courses</span></div></ActiveLink2></div>
-                            <div className='hover:translate-x-3 py-2 hover:text-light transition'> <ActiveLink2 to='/dashboard/manageUsers'><div className='flex items-center gap-x-2'><FaUsersCog></FaUsersCog> <span>Manage Users</span></div></ActiveLink2></div>
+                            <div className='text-gray hover:translate-x-3 py-2 hover:text-light transition'> <ActiveLink2 to='/dashboard/manageCourses'><div className='flex items-center gap-x-2'><FaCogs></FaCogs> <span>Manage Courses</span></div></ActiveLink2></div>
+                            <div className='text-gray hover:translate-x-3 py-2 hover:text-light transition'> <ActiveLink2 to='/dashboard/manageUsers'><div className='flex items-center gap-x-2'><FaUsersCog></FaUsersCog> <span>Manage Users</span></div></ActiveLink2></div>
                         </div>
                     </div>
 
