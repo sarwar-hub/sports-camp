@@ -36,7 +36,7 @@ const UserRow = ({ user, index }) => {
     }
 
 
-    // make instructor
+    // make admin
     const makeAdmin = () => {
         fetch(`http://localhost:5000/makeAdmin/${user._id}`, {
             method: 'PATCH',
@@ -74,10 +74,10 @@ const UserRow = ({ user, index }) => {
             <th>{index + 1}</th>
             <td>{user.name}</td>
             <td>{user.email}</td>
-            <td className="capitalize">{user.role}</td>
+            <td className={`${user.role === 'admin' && 'text-green-600'} ${user.role === 'instructor' && 'text-light'} capitalize`}>{user.role}</td>
             <td className="space-x-2">
-                <button onClick={makeInstructor} className="bg-dark p-1 rounded-none text-light capitalize">Make Instrustor</button>
-                <button onClick={makeAdmin} className="bg-dark2 p-1 rounded-none text-light capitalize">Make admin</button>
+                <button onClick={makeInstructor} className="bg-dark/60 hover:bg-dark hover:border-light border-[1px] border-transparent p-1 rounded-none text-light capitalize">Make Instrustor</button>
+                <button onClick={makeAdmin} className="bg-dark2/60 hover:bg-dark2 hover:border-light border-[1px] border-transparent p-1 rounded-none text-light capitalize">Make admin</button>
             </td>
         </tr>
     );

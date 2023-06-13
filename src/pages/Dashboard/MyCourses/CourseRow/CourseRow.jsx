@@ -10,7 +10,7 @@ const CourseRow = ({course, index}) => {
             <td>{course.courseName}</td>
             <td>{course.courseFee}</td>
             <td>{course.students}</td>
-            <td className='space-x-2'>
+            <td className=''>
                 <span className={`
                 ${status == 'pending' && 'bg-dark' } 
                 ${status == 'approved' && 'bg-blue-700' } 
