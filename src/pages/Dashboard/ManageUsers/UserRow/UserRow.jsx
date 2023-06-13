@@ -35,10 +35,39 @@ const UserRow = ({ user, index }) => {
             })
     }
 
-    // make admin
-    const makeAdmin = () => {
 
+    // make instructor
+    const makeAdmin = () => {
+        fetch(`http://localhost:5000/makeAdmin/${user._id}`, {
+            method: 'PATCH',
+            headers: { 'content-type': 'application/json' }
+        })
+            .then(res => res.json())
+            .then(data => {
+                if (data.modifiedCount > 0) {
+                    Swal.fire({
+                        position: 'top-center',
+                        icon: 'success',
+                        title: `${user.name} is Admin Now !`,
+                        showConfirmButton: false,
+                        timer: 1500
+                    })
+                } else if (data.modifiedCount == 0) {
+                    Swal.fire({
+                        position: 'top-center',
+                        icon: 'info',
+                        title: `${user.name} Already is an Admin !`,
+                        showConfirmButton: false,
+                        timer: 1500
+                    })
+                }
+            })
+            .catch(err => {
+                console.log(err.message);
+            })
     }
+
+    
 
     return (
         <tr className='text-gray'>
