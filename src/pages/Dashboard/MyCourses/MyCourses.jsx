@@ -18,6 +18,7 @@ const MyCourses = () => {
                             <th>Price</th>
                             <th>Students</th>
                             <th>Status</th>
+                            <th>Feedback</th>
                         </tr>
                     </thead>
                     <tbody>

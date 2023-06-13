@@ -36,33 +36,56 @@ const CourseRow = ({ course, index }) => {
 
     // deny
     const handleDeny = () => {
-        fetch(`http://localhost:5000/deny/${course._id}`, {
-            method: 'PATCH',
-            headers: { 'content-type': 'application/json' }
+
+
+
+        Swal.fire({
+            title: 'Send Feedback, why you\'ve denied it?',
+            input: 'text',
+            inputAttributes: {
+                autocapitalize: 'off'
+            },
+            showCancelButton: true,
+            confirmButtonText: 'Deny & send Feedback',
+            confirmButtonColor: 'rgb(220 38 38)',
+            showLoaderOnConfirm: true,
+            preConfirm: (text) => {
+                const feedback = { feedback: text };
+
+                // deny request
+                fetch(`http://localhost:5000/deny/${course._id}`, {
+                    method: 'PATCH',
+                    headers: { 'content-type': 'application/json' },
+                    body: JSON.stringify(feedback)
+                })
+                    .then(res => res.json())
+                    .then(data => {
+                        if (data.modifiedCount > 0) {
+                            Swal.fire({
+                                position: 'top-center',
+                                icon: 'success',
+                                title: 'The Course has been Denied',
+                                showConfirmButton: false,
+                                timer: 1500
+                            })
+                        } else if (data.modifiedCount == 0) {
+                            Swal.fire({
+                                position: 'top-center',
+                                icon: 'info',
+                                title: 'Already Denied',
+                                showConfirmButton: false,
+                                timer: 1500
+                            })
+                        }
+                    })
+                    .catch(err => {
+                        console.log(err.message);
+                    })
+
+            }
+
         })
-            .then(res => res.json())
-            .then(data => {
-                if (data.modifiedCount > 0) {
-                    Swal.fire({
-                        position: 'top-center',
-                        icon: 'success',
-                        title: 'The Course has been Denied',
-                        showConfirmButton: false,
-                        timer: 1500
-                    })
-                } else if (data.modifiedCount == 0) {
-                    Swal.fire({
-                        position: 'top-center',
-                        icon: 'info',
-                        title: 'Already Denied',
-                        showConfirmButton: false,
-                        timer: 1500
-                    })
-                }
-            })
-            .catch(err => {
-                console.log(err.message);
-            })
+
     }
 
     return (
