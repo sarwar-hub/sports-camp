@@ -13,6 +13,7 @@ import AddCourse from "./pages/Dashboard/AddCourse/AddCourse";
 import MyCourses from "./pages/Dashboard/MyCourses/MyCourses";
 import ManageCourses from "./pages/Dashboard/ManageCourses/ManageCourses";
 import ManageUsers from "./pages/Dashboard/ManageUsers/ManageUsers";
+import Error404 from "./pages/Error404/Error404";
 
 
 const router = createBrowserRouter([
@@ -79,6 +80,10 @@ const router = createBrowserRouter([
                 element: <ManageUsers></ManageUsers>
             },
         ]
+    },
+    {
+        path: '*',
+        element: <Error404></Error404>
     }
 ])
 
