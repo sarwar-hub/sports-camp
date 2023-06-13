@@ -35,7 +35,7 @@ const Navbar = () => {
   }
 
   return (
-    <div className="drawer bg-dark/20 dark:bg-light/40 fixed z-10">
+    <div className="drawer bg-dark/20 dark:bg-dark/50 fixed z-10">
 
       <input id="my-drawer-3" type="checkbox" className="drawer-toggle" />
       <div className="drawer-content flex flex-col">
