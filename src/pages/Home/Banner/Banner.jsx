@@ -9,6 +9,7 @@ import "swiper/css/pagination";
 import banner1 from "../../../assets/banner1.jpg";
 import banner2 from "../../../assets/banner2.jpg";
 import banner3 from "../../../assets/banner3.jpg";
+import { Fade } from "react-awesome-reveal";
 
 const Banner = () => {
     return (
@@ -33,10 +34,12 @@ const Banner = () => {
                         <div className="">
                         <img className="w-full" src={banner1} />
                         </div>
+                        <Fade>
                         <div className="absolute z-50 top-[20%] left-[10%] space-y-5 bg-dark/50 p-10">
                             <h1 className="font-bold text-9xl text-light">Let's Start <br /> with us.</h1>
                             <button className="bg-transparent px-4 py-2 font-semibold text-light border-[1px] border-light hover:bg-dark2/50" ><Link to='/classes'>Explore Courses</Link></button>
                         </div>
+                        </Fade>
                     </div>
                 </SwiperSlide>
                 <SwiperSlide>

@@ -5,3 +5,4 @@
 + Firebase
 + React icons
 + Sweet alert2
++ React awesom reveal
