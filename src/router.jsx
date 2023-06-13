@@ -7,7 +7,7 @@ import Courses from "./pages/Courses/Courses";
 import DashboardLayout from "./layouts/DashboardLayout";
 import PrivateRoute from "./privateRoute/privateRoute";
 import Instructors from "./pages/Instructors/Instructors";
-import DashboardHome from "./pages/Dashboard/DashboardHome";
+import DashboardHome from "./pages/Dashboard/DashboardHome/DashboardHome";
 import SelectedCourses from "./pages/Dashboard/SelectedCourses/SelectedCourses";
 import AddCourse from "./pages/Dashboard/AddCourse/AddCourse";
 import MyCourses from "./pages/Dashboard/MyCourses/MyCourses";
