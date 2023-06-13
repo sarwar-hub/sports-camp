@@ -70,14 +70,14 @@ const UserRow = ({ user, index }) => {
     
 
     return (
-        <tr className='text-gray'>
-            <th>{index + 1}</th>
+        <tr className='text-dark dark:text-light'>
+            <th className="font-normal">{index + 1}</th>
             <td>{user.name}</td>
             <td>{user.email}</td>
-            <td className={`${user.role === 'admin' && 'text-green-600'} ${user.role === 'instructor' && 'text-light'} capitalize`}>{user.role}</td>
+            <td className={`${user.role === 'admin' && 'text-green-400'} ${user.role === 'instructor' && 'text-blue-400'} capitalize`}>{user.role}</td>
             <td className="space-x-2">
-                <button onClick={makeInstructor} className="bg-dark/60 hover:bg-dark hover:border-light border-[1px] border-transparent p-1 rounded-none text-light capitalize">Make Instrustor</button>
-                <button onClick={makeAdmin} className="bg-dark2/60 hover:bg-dark2 hover:border-light border-[1px] border-transparent p-1 rounded-none text-light capitalize">Make admin</button>
+                <button onClick={makeInstructor} className="text-light bg-deepDark hover:bg-deepDark/50 p-2">Make Instrustor</button>
+                <button onClick={makeAdmin} className="text-light bg-deepDark hover:bg-deepDark/50 p-2">Make Admin</button>
             </td>
         </tr>
     );

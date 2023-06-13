@@ -89,15 +89,15 @@ const CourseRow = ({ course, index }) => {
     }
 
     return (
-        <tr className='text-gray'>
-            <th>{index + 1}</th>
+        <tr className='text-dark dark:text-light'>
+            <th className="font-normal">{index + 1}</th>
             <td>{course.courseName}</td>
             <td>{course.courseInstructor}</td>
             <td>{course.courseFee}</td>
-            <td className={`${course.status === 'denied' && 'text-red-600'} ${course.status === 'approved' && 'text-blue-600'}`}>{course.status}</td>
+            <td className={`${course.status === 'denied' && 'text-red-400'} ${course.status === 'approved' && 'text-blue-400'}`}>{course.status}</td>
             <td className="space-x-2">
-                <button onClick={handleApprove} className="bg-blue-700/50 hover:bg-blue-700/80 p-1 rounded-none text-light capitalize">Approve</button>
-                <button onClick={handleDeny} className="bg-red-700/50 hover:bg-red-700/80 p-1 rounded-none text-light capitalize">Deny</button>
+                <button onClick={handleApprove} className="bg-green-700  hover:bg-green-400/80 p-1 rounded-none text-light capitalize">Approve</button>
+                <button onClick={handleDeny} className="bg-red-700  hover:bg-red-700/80 p-1 rounded-none text-light capitalize">Deny</button>
             </td>
 
         </tr>

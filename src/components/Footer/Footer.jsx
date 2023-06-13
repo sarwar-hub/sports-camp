@@ -3,7 +3,7 @@ import {Link} from 'react-router-dom';
 
 const Footer = () => {
     return (
-        <div className='bg-dark text-light md:p-8 p-3'>
+        <div className='bg-light dark:bg-dark dark:text-light text-deepDark md:p-8 p-3'>
             <div className='md:flex max-sm:text-center max-w-[1480px] mx-auto md:justify-between'>
                 <div>
                     <h1 className='text-xl uppercase mb-5'>Sports Camp</h1>
@@ -15,9 +15,9 @@ const Footer = () => {
                     <h1 className='text-xl uppercase mb-5'>Follow us</h1>
                     <p>Follow us on social media</p>
                     <div className="flex space-x-5 mt-3 max-sm:justify-center">
-                        <Link><FaFacebookF className="hover:text-light/60 text-xl"></FaFacebookF></Link>
-                        <Link><FaInstagram className="hover:text-light/60 text-xl"></FaInstagram></Link>
-                        <Link><FaTwitter className="hover:text-light/60 text-xl"></FaTwitter></Link>
+                        <Link><FaFacebookF className="hover:text-deepDark  text-xl"></FaFacebookF></Link>
+                        <Link><FaInstagram className="hover:text-deepDark  text-xl"></FaInstagram></Link>
+                        <Link><FaTwitter className="hover:text-deepDark  text-xl"></FaTwitter></Link>
                     </div>
                 </div>
             </div>

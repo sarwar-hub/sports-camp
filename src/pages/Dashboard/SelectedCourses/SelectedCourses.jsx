@@ -12,7 +12,7 @@ const SelectedCourses = () => {
                 <table className="table">
                     {/* head */}
                     <thead>
-                        <tr className="text-light">
+                        <tr className="text-deepDark dark:text-light">
                             <th>SL</th>
                             <th>Course</th>
                             <th>Instructor</th>

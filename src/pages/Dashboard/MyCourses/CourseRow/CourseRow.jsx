@@ -11,16 +11,16 @@ const CourseRow = ({course, index}) => {
         feedback = course.feedback;
     }
     return (
-        <tr className='text-gray'>
-            <th>{index + 1}</th>
+        <tr className='text-dark dark:text-light'>
+            <th className="font-normal">{index + 1}</th>
             <td>{course.courseName}</td>
             <td>{course.courseFee}</td>
             <td>{course.students}</td>
             <td className=''>
                 <span className={`
-                ${status == 'pending' && 'text-gray' } 
-                ${status == 'approved' && 'text-blue-700' } 
-                ${status == 'denied' && 'text-red-700' } 
+                ${status == 'pending' && 'text-dark' } 
+                ${status == 'approved' && 'text-blue-400' } 
+                ${status == 'denied' && 'text-red-400' } 
                 p-1 rounded-none capitalize `}>
                 {status}
                 </span>

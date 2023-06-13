@@ -61,7 +61,7 @@ const CourseCard = ({ course }) => {
         }
     }
     return (
-        <div className={`${course.availableSeats == 0 ? 'bg-red-500' : 'bg-dark'} card w-full bg-dark text-light rounded-none shadow-xl`}>
+        <div className={`${course.availableSeats == 0 ? 'bg-red-500' : 'bg-light dark:bg-dark'} card w-full dark:text-light text-deepDark rounded-none shadow-xl`}>
             <figure><img src={course.thumbnail} alt="course thumb" /></figure>
             <div className="p-5 flex justify-between">
                 <div>
@@ -76,7 +76,7 @@ const CourseCard = ({ course }) => {
             <div>
                 <button onClick={handleSelectCourse} className={`
                 ${(course.availableSeats == 0 || currentUser.role == 'instructor' || currentUser.role == 'admin')
-                    && 'btn-disabled'} w-full py-2 bg-dark2`}>Select the Course</button>
+                    && 'btn-disabled'} w-full py-2 bg-deepLight hover:bg-dark hover:text-light dark:bg-deepDark/50 dark:hover:bg-deepDark/90`}>Select the Course</button>
             </div>
         </div>
     );

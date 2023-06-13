@@ -19,13 +19,13 @@ const CourseRow = ({course, index}) => {
     }
 
     return (
-        <tr className='text-gray'>
+        <tr className='text-dark dark:text-light'>
             <th>{index + 1}</th>
             <td>{course.courseName}</td>
             <td>{course.instructorName}</td>
             <td className='space-x-2'>
-                <button className='btn btn-sm rounded-none bg-dark text-gray'>Pay</button>
-                <button onClick={handleDelete} className='btn btn-sm rounded-none bg-red-500 text-white hover:bg-red-600'>⨉</button>
+                <button className='text-light bg-dark dark:bg-light/10 hover:bg-deepDark dark:hover:bg-deepDark px-3 py-1'>Pay</button>
+                <button onClick={handleDelete} className='text-light bg-red-600 hover:bg-red-700 px-3 py-1'>⨉</button>
             </td>
         </tr>
     );

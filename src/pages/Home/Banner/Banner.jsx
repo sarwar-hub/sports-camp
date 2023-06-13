@@ -35,9 +35,9 @@ const Banner = () => {
                         <img className="w-full" src={banner1} />
                         </div>
                         <Fade>
-                        <div className="absolute z-50 top-[20%] left-[10%] space-y-5 bg-dark/50 p-10">
+                        <div className="absolute z-50 top-[20%] left-[10%] space-y-5 bg-dark/70 p-10">
                             <h1 className="font-bold text-xl md:text-9xl text-light">Let's Start <br /> with us.</h1>
-                            <button className="bg-transparent px-4 py-2 max-sm:hidden md:font-semibold text-light border-[1px] border-light hover:bg-dark2/50" ><Link to='/classes'>Explore Courses</Link></button>
+                            <button className="bg-transparent px-4 py-2 max-sm:hidden md:font-semibold text-light border-[1px] border-light hover:bg-deepLight/50" ><Link to='/classes'>Explore Courses</Link></button>
                         </div>
                         </Fade>
                     </div>
@@ -47,9 +47,9 @@ const Banner = () => {
                         <div className="">
                         <img className="w-full" src={banner2} />
                         </div>
-                        <div className="absolute z-50 top-[20%] left-[10%] space-y-5 bg-dark/50 p-10">
+                        <div className="absolute z-50 top-[20%] left-[10%] space-y-5 bg-dark/70 p-10">
                             <h1 className="font-bold text-xl md:text-9xl text-light">Let's Start <br /> with us.</h1>
-                            <button className="bg-transparent px-4 py-2 max-sm:hidden md:font-semibold text-light border-[1px] border-light hover:bg-dark2/50" ><Link to='/classes'>Explore Courses</Link></button>
+                            <button className="bg-transparent px-4 py-2 max-sm:hidden md:font-semibold text-light border-[1px] border-light hover:bg-deepLight/50" ><Link to='/classes'>Explore Courses</Link></button>
                         </div>
                     </div>
                 </SwiperSlide>
@@ -58,9 +58,9 @@ const Banner = () => {
                         <div className="">
                         <img className="w-full" src={banner3} />
                         </div>
-                        <div className="absolute z-50 top-[20%] left-[10%] space-y-5 bg-dark/50 p-10">
+                        <div className="absolute z-50 top-[20%] left-[10%] space-y-5 bg-dark/70 p-10">
                             <h1 className="font-bold text-xl md:text-9xl text-light">Let's Start <br /> with us.</h1>
-                            <button className="bg-transparent px-4 py-2 max-sm:hidden md:font-semibold text-light border-[1px] border-light hover:bg-dark2/50" ><Link to='/classes'>Explore Courses</Link></button>
+                            <button className="bg-transparent px-4 py-2 max-sm:hidden md:font-semibold text-light border-[1px] border-light hover:bg-deepLight/50" ><Link to='/classes'>Explore Courses</Link></button>
                         </div>
                     </div>
                 </SwiperSlide>

@@ -9,10 +9,12 @@ import AuthProvider from './context/AuthProvider';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-   
+
     <AuthProvider>
-      <RouterProvider router={router}></RouterProvider>
+      <div className='bg-deepLight dark:bg-deepDark'>
+        <RouterProvider router={router}></RouterProvider>
+      </div>
     </AuthProvider>
-    
+
   </React.StrictMode>,
 )
