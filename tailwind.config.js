@@ -16,7 +16,7 @@ export default {
         dark: '#353b48',
         deepDark: '#1e272e',
 
-        sec: '#0652DD'
+        sec: '#079992'
       }
     },
   },

@@ -37,7 +37,7 @@ const useCourses = () => {
 
     // get courses by instructor
     useEffect(()=>{
-        fetch(`http://localhost:5000/coursesByInstructor?email=${user.email}`)
+        fetch(`http://localhost:5000/coursesByInstructor?email=${user?.email}`)
         .then(res=>res.json())
         .then(data=>setCoursesByInstructor(data))
         .catch(err=>{

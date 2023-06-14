@@ -52,23 +52,23 @@ const Login = () => {
     return (
         <div className="max-w-sm py-20 mx-auto">
             <SectionTitle>Login</SectionTitle>
-            <div className="max-w-md mx-auto bg-light p-10">
+            <div className="max-w-md mx-auto bg-light dark:bg-dark p-10">
                 <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col gap-y-10">
                     <div className="w-full">
-                        <label className="text-deepDark mb-2 block">Email</label>
+                        <label className="text-deepDark dark:text-light mb-2 block">Email</label>
 
 
 
-                        <input {...register('email', { required: true })} className=" p-3 w-full text-deepDark bg-deepLight outline-none " type="email" name="email" placeholder="Email" />
+                        <input {...register('email', { required: true })} className=" p-1 w-full text-deepDark bg-deepLight outline-none " type="email" name="email" placeholder="Email" />
                         {errors.email && <span className="text-red-500 p-1">* Enter your email</span>}
 
 
                     </div>
                     <div className="w-full">
-                        <label className="text-deepDark mb-2 block">Password</label>
+                        <label className="text-deepDark dark:text-light mb-2 block">Password</label>
 
 
-                        <input {...register('password', { required: true })} className=" p-3 w-full text-deepDark bg-deepLight outline-none " type="password" name="password" placeholder="Password" />
+                        <input {...register('password', { required: true })} className=" p-1 w-full text-deepDark bg-deepLight outline-none " type="password" name="password" placeholder="Password" />
                         {errors.email && <span className="text-red-500 p-1">* Enter your password</span>}
 
                         {/* error from firebase */}
@@ -77,13 +77,13 @@ const Login = () => {
 
                     </div>
                     {/* login button */}
-                    <button type="submit" className="bg-deepLight px-4 py-2 text-deepDark font-semibold border-[1px] border-light hover:bg-deepLight ">{loader ? 'Loading...' : 'login'}</button>
-                    <p className="text-deepDark">New here? Go for <Link to='/register' className="hover:underline text-sec">Register</Link></p>
+                    <button type="submit" className="transition hover:bg-transparent p-1 hover:text-sec font-semibold border-[1px] border-sec bg-sec text-light ">{loader ? 'Loading...' : 'login'}</button>
+                    <p className="text-deepDark dark:text-light">New here? Go for <Link to='/register' className="hover:underline text-sec">Register</Link></p>
                 </form>
                 <div>
                     <div className="flex flex-col ">
                         <div className="divider">OR</div>
-                        <button onClick={handleGoogleLogin} className="bg-deepLight px-4 py-2 text-deepDark font-semibold border-[1px] border-light hover:bg-deepLight ">Continue with Google</button>
+                        <button onClick={handleGoogleLogin} className="transition hover:bg-transparent p-1 hover:text-sec font-semibold border-[1px] border-sec bg-sec text-light ">Continue with Google</button>
                     </div>
                 </div>
             </div>

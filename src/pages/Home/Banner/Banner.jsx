@@ -1,3 +1,4 @@
+import './Banner.css';
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, EffectFade, Navigation, Pagination } from "swiper";
 import { Link } from "react-router-dom";
@@ -24,7 +25,7 @@ const Banner = () => {
                     disableOnInteraction: false,
                 }}
                 effect={"fade"}
-                navigation={true}
+                navigation={false}
                 pagination={{
                     clickable: true,
                 }}
@@ -41,9 +42,9 @@ const Banner = () => {
                         <Fade>
                         <div className="hero-content text-center text-neutral-content">
                             <div className="max-w-[700px] py-10 sm:py-10 md:py-20">
-                                <h1 className="mb-5 text-3xl md:text-9xl font-bold">Let's start with us.</h1>
-                                <p className="mb-5 text-lg">We are providing you a great summer training, it'll be a great thing to your life.</p>
-                                <Link to='/courses'><button className="px-5 py-2 border-[1px] border-light text-light bg-transparent">Explore Courses</button></Link>
+                                <h1 className="mb-5 text-light dark:text-light/50 text-3xl md:text-9xl font-bold">Let's <span className="text-sec">start</span> with us.</h1>
+                                <p className="mb-5 text-lg text-light">We are providing you a great summer training, it'll be a great thing to your life.</p>
+                                <Link to='/courses'><button className="px-5 py-2 border-[1px] border-light text-light bg-transparent hover:bg-sec hover:border-sec transition">Explore Courses</button></Link>
                             </div>
                         </div>
                         </Fade>

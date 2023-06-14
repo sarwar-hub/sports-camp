@@ -14,7 +14,7 @@ const Newsletter = () => {
 
                         <div className=" rounded-none">
                             <input type="email" placeholder="Email" className="bg-light/70 text-dark outline-none p-2 rounded-none" />
-                            <button className="bg-light p-2">SEND</button>
+                            <button className="bg-light p-2 text-sec">SEND</button>
                         </div>
 
                     </div>

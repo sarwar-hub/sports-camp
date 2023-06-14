@@ -76,34 +76,34 @@ const Register = () => {
     return (
         <div className="max-w-md py-20 mx-auto">
             <SectionTitle>Register</SectionTitle>
-            <div className="max-w-md mx-auto bg-light p-10">
+            <div className="max-w-md mx-auto bg-light dark:bg-dark p-10">
                 <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col gap-y-10">
                     <div className="flex justify-between gap-x-5">
                         <div className="w-full">
                             
-                            <label className="text-deepDark mb-2 block">Name *</label>
+                            <label className="text-deepDark dark:text-light mb-2 block">Name *</label>
 
 
-                            <input {...register('name', { required: true })} className=" p-3 w-full text-deepDark bg-deepLight outline-none " type="text" name="name" placeholder="Name" />
+                            <input {...register('name', { required: true })} className=" p-1 w-full text-deepDark bg-deepLight outline-none " type="text" name="name" placeholder="Name" />
                             {errors.name && <span className="text-red-500 p-1">* Name is required</span>}
 
 
                         </div>
                         <div className="w-full">
-                            <label className="text-deepDark mb-2 block">Photo URL *</label>
+                            <label className="text-deepDark dark:text-light mb-2 block">Photo URL *</label>
 
 
-                            <input {...register('photo', { required: true })} className=" p-3 w-full text-deepDark bg-deepLight outline-none " type="url" name="photo" placeholder="Photo URL" />
+                            <input {...register('photo', { required: true })} className=" p-1 w-full text-deepDark bg-deepLight outline-none " type="url" name="photo" placeholder="Photo URL" />
                             {errors.photo && <span className="text-red-500 p-1">* Photo URL is required</span>}
 
 
                         </div>
                     </div>
                     <div className="w-full">
-                        <label className="text-deepDark mb-2 block">Email *</label>
+                        <label className="text-deepDark dark:text-light mb-2 block">Email *</label>
 
 
-                        <input {...register('email', { required: true })} className=" p-3 w-full text-deepDark bg-deepLight outline-none " type="email" name="email" placeholder="Email" />
+                        <input {...register('email', { required: true })} className=" p-1 w-full text-deepDark bg-deepLight outline-none " type="email" name="email" placeholder="Email" />
                         {error && <span className="text-red-500 p-1">* {error}</span>}
                         {errors.email && <span className="text-red-500 p-1">* Email is required</span>}
 
@@ -111,10 +111,10 @@ const Register = () => {
                     </div>
                     <div className="flex justify-between gap-x-5">
                         <div className="w-full">
-                            <label className="text-deepDark mb-2 block">Password *</label>
+                            <label className="text-deepDark dark:text-light mb-2 block">Password *</label>
 
 
-                            <input {...register('password', { required: true, minLength: 6, maxLength: 20, pattern: /(?=.*[A-Z])(?=.*[!@#$&*])/ })} className=" p-3 w-full text-deepDark bg-deepLight outline-none " type="password" name="password" placeholder="Password" />
+                            <input {...register('password', { required: true, minLength: 6, maxLength: 20, pattern: /(?=.*[A-Z])(?=.*[!@#$&*])/ })} className=" p-1 w-full text-deepDark bg-deepLight outline-none " type="password" name="password" placeholder="Password" />
                             {errors.password?.type === 'required' && <span className="text-red-500 p-1">* Enter a passowrd.</span>}
                             {errors.password?.type === 'minLength' && <span className="text-red-500 p-1">* Password should be at least 6 characters.</span>}
                             {errors.password?.type === 'maxLength' && <span className="text-red-500 p-1">* Password should not be more then 20 characters.</span>}
@@ -123,10 +123,10 @@ const Register = () => {
 
                         </div>
                         <div className="w-full">
-                            <label className="text-deepDark mb-2 block">Re-type Password *</label>
+                            <label className="text-deepDark dark:text-light mb-2 block">Re-type Password *</label>
 
 
-                            <input {...register('confirmPassword', { required: true })} className=" p-3 w-full text-deepDark bg-deepLight outline-none " type="password" name="confirmPassword" placeholder="Re-type Password" />
+                            <input {...register('confirmPassword', { required: true })} className=" p-1 w-full text-deepDark bg-deepLight outline-none " type="password" name="confirmPassword" placeholder="Re-type Password" />
                             {errors.confirmPassword && <span className="text-red-500 p-1">* Re-type password.</span>}
                             {isMatch || <span className="text-red-500 p-1">* Password mismatch</span>}
 
@@ -134,8 +134,8 @@ const Register = () => {
                     </div>
 
                     {/* register button */}
-                    <button type="submit" className="bg-deepLight px-4 py-2 text-deepDark font-semibold border-[1px] border-light hover:bg-deepLight ">{loader ? 'Loading...' : 'Register'}</button>
-                    <p className="text-deepDark">Alrady registered? Go for <Link to='/login' className="hover:underline text-sec">Login</Link></p>
+                    <button type="submit" className="transition hover:bg-transparent p-1 hover:text-sec font-semibold border-[1px] border-sec bg-sec text-light ">{loader ? 'Loading...' : 'Register'}</button>
+                    <p className="text-deepDark dark:text-light">Alrady registered? Go for <Link to='/login' className="hover:underline text-sec">Login</Link></p>
                 </form>
             </div>
         </div>
