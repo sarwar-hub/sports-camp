@@ -21,7 +21,7 @@ const CourseRow = ({course, index}) => {
                 ${status == 'pending' && 'text-dark' } 
                 ${status == 'approved' && 'text-blue-400' } 
                 ${status == 'denied' && 'text-red-400' } 
-                p-1 rounded-none capitalize `}>
+                p-1 rounded-none capitalize font-semibold`}>
                 {status}
                 </span>
             </td>

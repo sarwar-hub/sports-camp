@@ -4,7 +4,7 @@ import UserRow from "./UserRow/UserRow";
 
 const ManageUsers = () => {
     // selected courses
-    const [allUsers, ] = useUser();
+    const [allUsers, ,] = useUser();
     return (
         <div>
             <SectionTitle>Manage Users</SectionTitle>

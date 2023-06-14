@@ -5,7 +5,7 @@ import CourseRow from "./CourseRow/CourseRow";
 
 const ManageCourses = () => {
     // selected courses
-    const [allCourses, , ] = useCourses();
+    const [allCourses, , , ] = useCourses();
     return (
         <div>
             <SectionTitle>Manage Courses</SectionTitle>

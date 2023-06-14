@@ -1,6 +1,9 @@
 import Swal from "sweetalert2";
+import useCourses from "../../../../hooks/useCourses";
 
 const CourseRow = ({ course, index }) => {
+
+    const [ , , , refetch] = useCourses();
 
     // approve
     const handleApprove = () => {
@@ -11,6 +14,7 @@ const CourseRow = ({ course, index }) => {
             .then(res => res.json())
             .then(data => {
                 if (data.modifiedCount > 0) {
+                    refetch();
                     Swal.fire({
                         position: 'top-center',
                         icon: 'success',
@@ -61,6 +65,7 @@ const CourseRow = ({ course, index }) => {
                     .then(res => res.json())
                     .then(data => {
                         if (data.modifiedCount > 0) {
+                            refetch();
                             Swal.fire({
                                 position: 'top-center',
                                 icon: 'success',
@@ -94,7 +99,7 @@ const CourseRow = ({ course, index }) => {
             <td>{course.courseName}</td>
             <td>{course.courseInstructor}</td>
             <td>{course.courseFee}</td>
-            <td className={`${course.status === 'denied' && 'text-red-400'} ${course.status === 'approved' && 'text-blue-400'}`}>{course.status}</td>
+            <td className={`${course.status === 'denied' && 'text-red-400'} ${course.status === 'approved' && 'text-blue-400'} font-semibold`}>{course.status}</td>
             <td className="space-x-2">
                 <button onClick={handleApprove} className="bg-green-700  hover:bg-green-400/80 p-1 rounded-none text-light capitalize">Approve</button>
                 <button onClick={handleDeny} className="bg-red-700  hover:bg-red-700/80 p-1 rounded-none text-light capitalize">Deny</button>

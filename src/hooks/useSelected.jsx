@@ -1,4 +1,4 @@
-import { useContext,  useState } from "react";
+import { useContext } from "react";
 import { AuthContext } from "../context/AuthProvider";
 
 import { useQuery } from '@tanstack/react-query';
@@ -6,8 +6,6 @@ import { useQuery } from '@tanstack/react-query';
 const useSelected = () => {
     // data from context
     const {user} = useContext(AuthContext);
-    
-    const [selectedItems, setSelectedItems] = useState([]);
    
    
     
@@ -25,12 +23,10 @@ const useSelected = () => {
 
 
     // get selected data from database (using tanstack query)
-    const { isLoading, refetch, error, data } = useQuery({
-        queryKey: ['selectedItems', user.email],
+    const { isLoading, refetch, error, data: selectedItems = [] } = useQuery({
+        queryKey: ['selectedItems', user?.email],
         queryFn: async() =>{
-            const res = await fetch(`http://localhost:5000/selectedItems?email=${user.email}`);
-            
-            setSelectedItems(data);
+            const res = await fetch(`http://localhost:5000/selectedItems?email=${user?.email}`);
 
             return res.json();
         }

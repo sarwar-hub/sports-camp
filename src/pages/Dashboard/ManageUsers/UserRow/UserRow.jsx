@@ -1,8 +1,10 @@
 import Swal from "sweetalert2";
+import useUser from "../../../../hooks/useUser";
 
 
 const UserRow = ({ user, index }) => {
-
+    // to refech users in useUser hook
+    const [, , refech] = useUser();
 
     // make instructor
     const makeInstructor = () => {
@@ -13,6 +15,7 @@ const UserRow = ({ user, index }) => {
             .then(res => res.json())
             .then(data => {
                 if (data.modifiedCount > 0) {
+                    refech();
                     Swal.fire({
                         position: 'top-center',
                         icon: 'success',
@@ -45,6 +48,7 @@ const UserRow = ({ user, index }) => {
             .then(res => res.json())
             .then(data => {
                 if (data.modifiedCount > 0) {
+                    refech();
                     Swal.fire({
                         position: 'top-center',
                         icon: 'success',
@@ -74,7 +78,7 @@ const UserRow = ({ user, index }) => {
             <th className="font-normal">{index + 1}</th>
             <td>{user.name}</td>
             <td>{user.email}</td>
-            <td className={`${user.role === 'admin' && 'text-green-400'} ${user.role === 'instructor' && 'text-blue-400'} capitalize`}>{user.role}</td>
+            <td className={`${user.role === 'admin' && 'text-green-400'} ${user.role === 'instructor' && 'text-blue-400'} capitalize font-semibold`}>{user.role}</td>
             <td className="space-x-2">
                 <button onClick={makeInstructor} className="text-light bg-deepDark hover:bg-deepDark/50 p-2">Make Instrustor</button>
                 <button onClick={makeAdmin} className="text-light bg-deepDark hover:bg-deepDark/50 p-2">Make Admin</button>

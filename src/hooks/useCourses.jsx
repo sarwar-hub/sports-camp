@@ -10,7 +10,7 @@ const useCourses = () => {
     const {user} = useContext(AuthContext);
 
     // states
-    const [allCourses, setAllCourses] = useState([]);
+   
     const [topCourses, setTopCourses] = useState([]);
     const [coursesByInstructor, setCoursesByInstructor] = useState([]);
 
@@ -28,12 +28,10 @@ const useCourses = () => {
 
 
     // used tanstack instead of normal data fetching to get all courses from database
-    const { data } = useQuery({
+    const { data: allCourses = [] , refetch } = useQuery({
         queryKey: ['courses'],
         queryFn: async() =>{
             const res = await fetch(`http://localhost:5000/courses`);
-            
-            setAllCourses(data);
 
             return res.json();
         }
@@ -61,7 +59,7 @@ const useCourses = () => {
         })
     }, [user])
 
-    return [allCourses, topCourses, coursesByInstructor];
+    return [allCourses, topCourses, coursesByInstructor, refetch];
 };
 
 export default useCourses;
