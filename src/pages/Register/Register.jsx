@@ -4,6 +4,7 @@ import { useForm } from "react-hook-form";
 import { useContext, useState } from "react";
 import { AuthContext } from "../../context/AuthProvider";
 import Swal from "sweetalert2";
+import SocialLogin from "../../components/SocialLogin/SocialLogin";
 
 const Register = () => {
 
@@ -32,7 +33,7 @@ const Register = () => {
             setIsMatch(true);
         }
 
-        // register user
+        // register user by email and password
         try {
             await registerUser(data.email, data.password);
             await updateNamePhoto(data.name, data.photo);
@@ -137,6 +138,8 @@ const Register = () => {
                     <button type="submit" className="transition hover:bg-transparent p-1 hover:text-sec font-semibold border-[1px] border-sec bg-sec text-light ">{loader ? 'Loading...' : 'Register'}</button>
                     <p className="text-deepDark dark:text-light">Alrady registered? Go for <Link to='/login' className="hover:underline text-sec">Login</Link></p>
                 </form>
+                {/* social login */}
+                <SocialLogin></SocialLogin>
             </div>
         </div>
     );

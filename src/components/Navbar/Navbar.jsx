@@ -6,10 +6,10 @@ import { HiMoon, HiSun } from "react-icons/hi";
 
 
 const navItems = [
-  <li className="dark:text-light text-sec hover:text-deepLight font-semibold transition"><ActiveLink to='/'>Home</ActiveLink></li>,
-  <li className="dark:text-light text-sec hover:text-deepLight font-semibold transition"><ActiveLink to='/instructors'>Instructors</ActiveLink></li>,
-  <li className="dark:text-light text-sec hover:text-deepLight font-semibold transition"><ActiveLink to='/courses'>Courses</ActiveLink></li>,
-  <li className="dark:text-light text-sec hover:text-deepLight font-semibold transition"><ActiveLink to='/dashboard/home'>Dashboard</ActiveLink></li>,
+  <li className="dark:text-light text-gray-400 hover:text-deepLight font-semibold transition"><ActiveLink to='/'>Home</ActiveLink></li>,
+  <li className="dark:text-light text-gray-400 hover:text-deepLight font-semibold transition"><ActiveLink to='/instructors'>Instructors</ActiveLink></li>,
+  <li className="dark:text-light text-gray-400 hover:text-deepLight font-semibold transition"><ActiveLink to='/courses'>Courses</ActiveLink></li>,
+  <li className="dark:text-light text-gray-400 hover:text-deepLight font-semibold transition"><ActiveLink to='/dashboard/home'>Dashboard</ActiveLink></li>,
 ];
 
 const Navbar = () => {
@@ -35,7 +35,7 @@ const Navbar = () => {
   }
 
   return (
-    <div className="drawer bg-dark/80 dark:bg-dark/50 fixed z-10">
+    <div className="drawer bg-light/20 dark:bg-dark/50 fixed z-10">
 
       <input id="my-drawer-3" type="checkbox" className="drawer-toggle" />
       <div className="drawer-content flex flex-col">
@@ -63,7 +63,7 @@ const Navbar = () => {
 
           {/* dark/light switch */}
           <div className="text-light ml-5">
-            <button onClick={switchTheme} className="text-2xl hover:bg-sec/30 bg-light/10 p-2 rounded-full transition">{theme === "light" ? 
+            <button onClick={switchTheme} className="text-2xl hover:bg-sec/30 bg-light/50 hover:text-light p-2 text-sec dark:text-light rounded-full transition">{theme === "light" ? 
               <span className="transition"><HiMoon></HiMoon></span> :
               <span className="transition"><HiSun></HiSun></span>
             }</button>

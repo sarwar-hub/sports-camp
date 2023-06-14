@@ -4,13 +4,14 @@ import SectionTitle from "../../components/SectionTitle/SectionTitle";
 import { useForm } from "react-hook-form";
 import { useContext, useState } from "react";
 import { AuthContext } from "../../context/AuthProvider";
+import SocialLogin from "../../components/SocialLogin/SocialLogin";
 
 const Login = () => {
     // error state
     const [error, setError] = useState('');
 
     // loaded from context
-    const { login, googleLogin, loader } = useContext(AuthContext);
+    const { login, loader } = useContext(AuthContext);
 
     // react hook form data
     const { register, handleSubmit, formState: { errors } } = useForm();
@@ -26,7 +27,7 @@ const Login = () => {
 
 
 
-        // login
+        // login with email and password
         try {
             await login(data.email, data.password);
             navigate(from, {replace:true});
@@ -35,17 +36,6 @@ const Login = () => {
         }
 
 
-    }
-
-
-
-    // login with google
-    const handleGoogleLogin = async () => {
-        try {
-            await googleLogin();
-        } catch (err) {
-            setError(err.message);
-        }
     }
 
 
@@ -80,12 +70,8 @@ const Login = () => {
                     <button type="submit" className="transition hover:bg-transparent p-1 hover:text-sec font-semibold border-[1px] border-sec bg-sec text-light ">{loader ? 'Loading...' : 'login'}</button>
                     <p className="text-deepDark dark:text-light">New here? Go for <Link to='/register' className="hover:underline text-sec">Register</Link></p>
                 </form>
-                <div>
-                    <div className="flex flex-col ">
-                        <div className="divider">OR</div>
-                        <button onClick={handleGoogleLogin} className="transition hover:bg-transparent p-1 hover:text-sec font-semibold border-[1px] border-sec bg-sec text-light ">Continue with Google</button>
-                    </div>
-                </div>
+                {/* social login */}
+                <SocialLogin></SocialLogin>
             </div>
         </div>
     );
