@@ -1,6 +1,7 @@
 import { useContext, useState } from "react";
 import { useEffect } from "react";
 import { AuthContext } from "../context/AuthProvider";
+import { useQuery } from "@tanstack/react-query";
 
 
 const useCourses = () => {
@@ -13,17 +14,32 @@ const useCourses = () => {
     const [topCourses, setTopCourses] = useState([]);
     const [coursesByInstructor, setCoursesByInstructor] = useState([]);
 
-    // get all courses
-    useEffect(()=>{
-        fetch('http://localhost:5000/courses')
-        .then(res=>res.json())
-        .then(data=> setAllCourses(data))
-        .catch(err=>{
-            console.log(err.message);
-        })
+    // // get all courses
+    // useEffect(()=>{
+    //     fetch('http://localhost:5000/courses')
+    //     .then(res=>res.json())
+    //     .then(data=> setAllCourses(data))
+    //     .catch(err=>{
+    //         console.log(err.message);
+    //     })
 
     
-    }, [])
+    // }, [])
+
+
+    // used tanstack instead of normal data fetching to get all courses from database
+    const { data } = useQuery({
+        queryKey: ['courses'],
+        queryFn: async() =>{
+            const res = await fetch(`http://localhost:5000/courses`);
+            
+            setAllCourses(data);
+
+            return res.json();
+        }
+      })
+
+      
 
     // get top courses
     useEffect(()=>{
