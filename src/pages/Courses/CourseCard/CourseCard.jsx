@@ -21,7 +21,7 @@ const CourseCard = ({ course }) => {
     const handleSelectCourse = () => {
         if (user) {
             // add selected item into database
-            const itemInfo = { courseId: course._id, userEmail: user.email };
+            const itemInfo = { courseId: course._id, userEmail: user.email, courseName: course.courseName, instructorName: course.instructorName, courseFee: course.courseFee };
             fetch('http://localhost:5000/selectedItems', {
                 method: 'POST',
                 headers: { 'content-type': 'application/json' },

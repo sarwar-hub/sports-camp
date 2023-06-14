@@ -1,43 +1,42 @@
-import { useContext, useEffect, useState } from "react";
+import { useContext,  useState } from "react";
 import { AuthContext } from "../context/AuthProvider";
-import useCourses from "./useCourses";
+
+import { useQuery } from '@tanstack/react-query';
 
 const useSelected = () => {
     // data from context
     const {user} = useContext(AuthContext);
     
-    const [selected, setSelected] = useState([]);
-    const selectedItems = [];
-
-    // get all courses
-    const [allCourses, , ] = useCourses();
-
- 
-
-        
-        for (const courseItem of selected) {
-            
-            const matchedItem = allCourses?.find(course => course?._id === courseItem.courseId);
-            
-            if(matchedItem) {
-                selectedItems.push(matchedItem);
-            }
-        }
-
+    const [selectedItems, setSelectedItems] = useState([]);
+   
    
     
 
+    // normal system to get data from database
+    // useEffect(()=>{
+    //     fetch(`http://localhost:5000/selectedItems?email=${user.email}`)
+    //     .then(res=>res.json())
+    //     .then(data=> setSelected(data))
+    //     .catch(err=>{
+    //         console.log(err.message);
+    //     })
+    // }, [user])
 
-    useEffect(()=>{
-        fetch(`http://localhost:5000/selectedItems?email=${user.email}`)
-        .then(res=>res.json())
-        .then(data=> setSelected(data))
-        .catch(err=>{
-            console.log(err.message);
-        })
-    }, [user])
 
-    return [selectedItems];
+
+    // get selected data from database (using tanstack query)
+    const { isLoading, refetch, error, data } = useQuery({
+        queryKey: ['selectedItems', user.email],
+        queryFn: async() =>{
+            const res = await fetch(`http://localhost:5000/selectedItems?email=${user.email}`);
+            
+            setSelectedItems(data);
+
+            return res.json();
+        }
+      })
+
+    return [selectedItems, refetch, isLoading, error];
 };
 
 export default useSelected;

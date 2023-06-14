@@ -4,7 +4,10 @@ import CourseRow from "./CourseRow/CourseRow";
 
 const SelectedCourses = () => {
     // selected courses
-    const [selectedCourses] = useSelected();
+    const [selectedItems, , isLoading, ] = useSelected();
+   if(isLoading) {
+    return <h1 className="text-3xl md:text-9xl z-50">Loading...</h1>
+   }
     return (
         <div>
             <SectionTitle>My Selected Courses</SectionTitle>
@@ -21,7 +24,7 @@ const SelectedCourses = () => {
                     </thead>
                     <tbody>
                         {
-                            selectedCourses?.map((course, index) => <CourseRow key={course?._id} course={course} index={index}></CourseRow>)
+                            selectedItems?.map((course, index) => <CourseRow key={course?._id} course={course} index={index}></CourseRow>)
                         }
                     </tbody>
                 </table>
