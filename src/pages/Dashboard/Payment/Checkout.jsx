@@ -104,7 +104,7 @@ const Checkout = () => {
 
         // if completed payment
         if (paymentIntent?.status === "succeeded") {
-            setTrxId(paymentIntent.id);
+            
 
             const paymentInfo = {
                 id: selectedItem.courseId,
