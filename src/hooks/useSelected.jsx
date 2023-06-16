@@ -23,16 +23,20 @@ const useSelected = () => {
 
 
     // get selected data from database (using tanstack query)
-    const { isLoading, refetch, error, data: selectedItems = [] } = useQuery({
+    const {data: selectedItemss = [], isLoading, refetch, error } = useQuery({
         queryKey: ['selectedItems', user?.email],
         queryFn: async() =>{
-            const res = await fetch(`http://localhost:5000/selectedItems?email=${user?.email}`);
+            const res = await fetch(`http://localhost:5000/selectedItems?email=${user?.email}`, {
+                headers: {
+                    authorization: `bearer ${localStorage.getItem('access-token')}`
+                }
+            });
 
             return res.json();
         }
       })
 
-    return [selectedItems, refetch, isLoading, error];
+    return [selectedItemss, refetch, isLoading, error];
 };
 
 export default useSelected;

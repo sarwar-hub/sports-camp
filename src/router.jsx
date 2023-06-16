@@ -14,6 +14,7 @@ import MyCourses from "./pages/Dashboard/MyCourses/MyCourses";
 import ManageCourses from "./pages/Dashboard/ManageCourses/ManageCourses";
 import ManageUsers from "./pages/Dashboard/ManageUsers/ManageUsers";
 import Error404 from "./pages/Error404/Error404";
+import Payment from "./pages/Dashboard/Payment/Payment";
 
 
 const router = createBrowserRouter([
@@ -44,40 +45,44 @@ const router = createBrowserRouter([
         ]
     },
     {
-        path: '/dashboard',
+        path: 'dashboard',
         element: <PrivateRoute><DashboardLayout></DashboardLayout></PrivateRoute>,
         children: [
             {
-                path: '/dashboard/home',
+                path: 'home',
                 element: <DashboardHome></DashboardHome>
             },
             {
-                path: '/dashboard/selectedCourses',
+                path: 'selectedCourses',
                 element: <SelectedCourses></SelectedCourses>
             },
             {
-                path: '/dashboard/enrolledCourses',
+                path: 'enrolledCourses',
                 element: ''
             },
             {
-                path: '/dashboard/paymentHistory',
+                path: 'paymentHistory',
                 element: ''
             },
             {
-                path: '/dashboard/addCourse',
+                path: 'addCourse',
                 element: <AddCourse></AddCourse>
             },
             {
-                path: '/dashboard/myCourses',
+                path: 'myCourses',
                 element: <MyCourses></MyCourses>
             },
             {
-                path: '/dashboard/manageCourses',
+                path: 'manageCourses',
                 element: <ManageCourses></ManageCourses>
             },
             {
-                path: '/dashboard/manageUsers',
+                path: 'manageUsers',
                 element: <ManageUsers></ManageUsers>
+            },
+            {
+                path: 'payment/:id',
+                element: <Payment></Payment>,
             },
         ]
     },

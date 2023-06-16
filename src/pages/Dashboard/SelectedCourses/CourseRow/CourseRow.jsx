@@ -1,5 +1,6 @@
 import Swal from "sweetalert2";
 import useSelected from "../../../../hooks/useSelected";
+import { Link } from "react-router-dom";
 
 
 const CourseRow = ({ course, index }) => {
@@ -48,7 +49,7 @@ const CourseRow = ({ course, index }) => {
             <td>{course.courseName}</td>
             <td>{course.instructorName}</td>
             <td className='space-x-2'>
-                <button className='text-light bg-dark dark:bg-light/10 hover:bg-deepDark dark:hover:bg-deepDark px-3 py-1'>Pay</button>
+                <Link to={`/dashboard/payment/${course._id}`}><button className='text-light bg-dark dark:bg-light/10 hover:bg-deepDark dark:hover:bg-deepDark px-3 py-1'>Pay</button></Link>
                 <button onClick={handleDelete} className='text-light bg-red-600 hover:bg-red-700 px-3 py-1'>⨉</button>
             </td>
         </tr>

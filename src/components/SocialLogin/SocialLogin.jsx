@@ -6,7 +6,7 @@ const SocialLogin = () => {
     // location and navigate
     const navigate = useNavigate();
     const location = useLocation();
-    const from = location.state?.from.pathname || '/';
+    const from = location?.state?.from.pathname || '/';
 
     // loaded from context
     const { googleLogin, setLoader } = useContext(AuthContext);
