@@ -38,7 +38,7 @@ const Banner = () => {
 
                 <SwiperSlide key={index}>
                     <div className="hero" style={{backgroundImage: `url(${slide})`}}>
-                        <div className="hero-overlay bg-gradient-to-r from-deepDark to-light/20"></div>
+                        <div className="hero-overlay bg-deepDark/50"></div>
                         <Fade>
                         <div className="hero-content text-center text-neutral-content">
                             <div className="max-w-[700px] py-10 sm:py-10 md:py-20">
