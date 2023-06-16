@@ -1,3 +1,4 @@
+import { Helmet } from "react-helmet-async";
 import SectionTitle from "../../../components/SectionTitle/SectionTitle";
 import useCourses from "../../../hooks/useCourses";
 import CourseRow from "./CourseRow/CourseRow";
@@ -7,6 +8,8 @@ const MyCourses = () => {
     const [, , coursesByInstructor] = useCourses();
     return (
         <div>
+            <Helmet><title>My courses | Sports Camp</title></Helmet>
+
             <SectionTitle>My Courses</SectionTitle>
             <div className="overflow-x-auto">
                 <table className="table">

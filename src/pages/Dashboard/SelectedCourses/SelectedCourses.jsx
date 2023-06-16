@@ -1,3 +1,4 @@
+import { Helmet } from "react-helmet-async";
 import SectionTitle from "../../../components/SectionTitle/SectionTitle";
 import useSelected from "../../../hooks/useSelected";
 import CourseRow from "./CourseRow/CourseRow";
@@ -10,6 +11,8 @@ const SelectedCourses = () => {
    }
     return (
         <div>
+            <Helmet><title>Selected courses | Sports Camp</title></Helmet>
+
             <SectionTitle>My Selected Courses</SectionTitle>
             <div className="overflow-x-auto">
                 <table className="table">

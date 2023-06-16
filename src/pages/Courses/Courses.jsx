@@ -1,3 +1,4 @@
+import { Helmet } from "react-helmet-async";
 import PageCover from "../../components/PageCover/PageCover";
 import useCourses from "../../hooks/useCourses";
 import CourseCard from "./CourseCard/CourseCard";
@@ -11,6 +12,7 @@ const Courses = () => {
 
     return (
         <div className="mb-16">
+            <Helmet><title>Courses | Sports Camp</title></Helmet>
             <PageCover>Courses</PageCover>
             <div className="mx-2 my-5 md:mx-10 md:my-10">
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-7">

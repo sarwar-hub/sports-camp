@@ -5,6 +5,7 @@ import { useForm } from "react-hook-form";
 import { useContext, useState } from "react";
 import { AuthContext } from "../../context/AuthProvider";
 import SocialLogin from "../../components/SocialLogin/SocialLogin";
+import { Helmet } from "react-helmet-async";
 
 const Login = () => {
     // error state
@@ -41,6 +42,8 @@ const Login = () => {
 
     return (
         <div className="max-w-sm py-20 mx-auto">
+            <Helmet><title>Login | Sports Camp</title></Helmet>
+
             <SectionTitle>Login</SectionTitle>
             <div className="max-w-md mx-auto bg-light dark:bg-dark p-10">
                 <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col gap-y-10">

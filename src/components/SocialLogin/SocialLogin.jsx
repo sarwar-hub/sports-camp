@@ -35,6 +35,8 @@ const SocialLogin = () => {
                         setLoader(false);
                         console.log(err.message)
                     })
+                    navigate(from, { replace: true });
+
 
             })
             .catch(err => {

@@ -3,6 +3,7 @@ import SectionTitle from "../../../components/SectionTitle/SectionTitle";
 import Swal from "sweetalert2";
 import { useContext } from "react";
 import { AuthContext } from "../../../context/AuthProvider";
+import { Helmet } from "react-helmet-async";
 
 const AddCourse = () => {
     // data from context
@@ -36,6 +37,8 @@ const AddCourse = () => {
 
     return (
         <div>
+            <Helmet><title>Add Course | Sports Camp</title></Helmet>
+
             <SectionTitle>Add New Course</SectionTitle>
             <form onSubmit={handleSubmit(onSubmit)} className="text-dark w-[350px] sm:w-[400px] space-y-3">
                 <div className="form-control">

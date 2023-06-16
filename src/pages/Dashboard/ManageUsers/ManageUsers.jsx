@@ -1,3 +1,4 @@
+import { Helmet } from "react-helmet-async";
 import SectionTitle from "../../../components/SectionTitle/SectionTitle";
 import useUser from "../../../hooks/useUser";
 import UserRow from "./UserRow/UserRow";
@@ -7,6 +8,8 @@ const ManageUsers = () => {
     const [allUsers, ,] = useUser();
     return (
         <div>
+            <Helmet><title>Manage users | Sports Camp</title></Helmet>
+
             <SectionTitle>Manage Users</SectionTitle>
             <div className="overflow-x-auto">
                 <table className="table">

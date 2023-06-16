@@ -5,6 +5,7 @@ import { useContext, useState } from "react";
 import { AuthContext } from "../../context/AuthProvider";
 import Swal from "sweetalert2";
 import SocialLogin from "../../components/SocialLogin/SocialLogin";
+import { Helmet } from "react-helmet-async";
 
 const Register = () => {
 
@@ -76,6 +77,8 @@ const Register = () => {
 
     return (
         <div className="max-w-md py-20 mx-auto">
+            <Helmet><title>Register | Sports Camp</title></Helmet>
+            
             <SectionTitle>Register</SectionTitle>
             <div className="max-w-md mx-auto bg-light dark:bg-dark p-10">
                 <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col gap-y-10">

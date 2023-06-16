@@ -26,11 +26,7 @@ const useSelected = () => {
     const {data: selectedItemss = [], isLoading, refetch, error } = useQuery({
         queryKey: ['selectedItems', user?.email],
         queryFn: async() =>{
-            const res = await fetch(`http://localhost:5000/selectedItems?email=${user?.email}`, {
-                headers: {
-                    authorization: `bearer ${localStorage.getItem('access-token')}`
-                }
-            });
+            const res = await fetch(`http://localhost:5000/selectedItems?email=${user?.email}`);
 
             return res.json();
         }

@@ -16,17 +16,17 @@ const AuthProvider = ({children}) => {
     useEffect(()=>{
         const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
             setUser(currentUser);
-            if(currentUser.email){
-                fetch('http://localhost:5000/jwt', {
-                    method: 'POST',
-                    headers: {'content-type': 'application/json'},
-                    body: JSON.stringify({email: currentUser?.email})
-                })
-                .then(res=>res.json())
-                .then(data=>{
-                    localStorage.setItem('access-token', data?.token);
-                })
-            }
+            // if(currentUser.email){
+            //     fetch('http://localhost:5000/jwt', {
+            //         method: 'POST',
+            //         headers: {'content-type': 'application/json'},
+            //         body: JSON.stringify({email: currentUser?.email})
+            //     })
+            //     .then(res=>res.json())
+            //     .then(data=>{
+            //         localStorage.setItem('access-token', data?.token);
+            //     })
+            // }
             setLoader(false);
         })
         return () => {
