@@ -11,7 +11,7 @@ const useUser = () => {
 
     // // get all users from database
     // useEffect(()=>{
-    //     fetch(`http://localhost:5000/users`)
+    //     fetch(`https://sports-camp-server-neon.vercel.app/users`)
     //     .then(res=>res.json())
     //     .then(data=>setAllUsers(data))
     //     .catch(err=>{
@@ -24,14 +24,14 @@ const useUser = () => {
     const { data: allUsers = [], refetch } = useQuery({
         queryKey: ['users', user],
         queryFn: async() =>{
-          const res = await fetch('http://localhost:5000/users');
+          const res = await fetch('https://sports-camp-server-neon.vercel.app/users');
           return res.json();
         }
       })
     
     
     useEffect(()=>{
-        fetch(`http://localhost:5000/currentUser?email=${user?.email}`)
+        fetch(`https://sports-camp-server-neon.vercel.app/currentUser?email=${user?.email}`)
         .then(res=>res.json())
         .then(data=>setCurrentUser(data))
         .catch(err=>{

@@ -19,7 +19,7 @@ const Instructors = () => {
             <div className="grid grid-cols-1 sm:grid-cols-3 md:grid-cols-4 gap-7">
                 {/* top courses */}
                 {
-                    allInstructors.map(instructor => <InstructorCard key={instructor._id} instructor={instructor}></InstructorCard>)
+                    allInstructors?.map(instructor => <InstructorCard key={instructor._id} instructor={instructor}></InstructorCard>)
                 }
             </div>
             </div>

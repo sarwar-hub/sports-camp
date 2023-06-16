@@ -8,7 +8,7 @@ import CourseCard from "./CourseCard/CourseCard";
 const Courses = () => {
 
     // course from useCourse hook
-    const [allCourses, , ] = useCourses();
+    const [allCourses, , , ] = useCourses();
 
     return (
         <div className="mb-16">
@@ -18,7 +18,7 @@ const Courses = () => {
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-7">
                 {/* top courses */}
                 {
-                    allCourses.map(course => <CourseCard key={course._id} course={course}></CourseCard>)
+                    allCourses?.map(course => <CourseCard key={course._id} course={course}></CourseCard>)
                 }
             </div>
             </div>

@@ -17,7 +17,7 @@ const AuthProvider = ({children}) => {
         const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
             setUser(currentUser);
             if(currentUser.email){
-                fetch('http://localhost:5000/jwt', {
+                fetch('https://sports-camp-server-neon.vercel.app/jwt', {
                     method: 'POST',
                     headers: {'content-type': 'application/json'},
                     body: JSON.stringify({email: currentUser?.email})

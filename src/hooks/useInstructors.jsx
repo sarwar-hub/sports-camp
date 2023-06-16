@@ -6,7 +6,7 @@ const useInstructors = () => {
     const [topInstructors, setTopInstructors] = useState([]);
     
     useEffect(()=>{
-        fetch('http://localhost:5000/instructors')
+        fetch('https://sports-camp-server-neon.vercel.app/instructors')
         .then(res=>res.json())
         .then(data=>setAllInstructors(data))
         .catch(err=>{
@@ -16,7 +16,7 @@ const useInstructors = () => {
     }, [])
     
     useEffect(()=>{
-        fetch('http://localhost:5000/topInstructors')
+        fetch('https://sports-camp-server-neon.vercel.app/topInstructors')
         .then(res=>res.json())
         .then(data=>setTopInstructors(data))
         .catch(err=>{

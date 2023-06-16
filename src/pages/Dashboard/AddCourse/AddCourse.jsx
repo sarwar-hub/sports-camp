@@ -11,7 +11,7 @@ const AddCourse = () => {
 
     const { register, handleSubmit, reset } = useForm();
     const onSubmit = data => {
-        fetch('http://localhost:5000/courses', {
+        fetch('https://sports-camp-server-neon.vercel.app/courses', {
             method: "POST",
             headers: { 'content-type': 'application/json' },
             body: JSON.stringify(data)

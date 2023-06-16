@@ -16,7 +16,7 @@ const useCourses = () => {
 
     // // get all courses
     // useEffect(()=>{
-    //     fetch('http://localhost:5000/courses')
+    //     fetch('https://sports-camp-server-neon.vercel.app/courses')
     //     .then(res=>res.json())
     //     .then(data=> setAllCourses(data))
     //     .catch(err=>{
@@ -31,7 +31,7 @@ const useCourses = () => {
     const { data: allCourses = [] , refetch } = useQuery({
         queryKey: ['courses'],
         queryFn: async() =>{
-            const res = await fetch(`http://localhost:5000/courses`);
+            const res = await fetch(`https://sports-camp-server-neon.vercel.app/courses`);
 
             return res.json();
         }
@@ -41,7 +41,7 @@ const useCourses = () => {
 
     // get top courses
     useEffect(()=>{
-        fetch('http://localhost:5000/topCourses')
+        fetch('https://sports-camp-server-neon.vercel.app/topCourses')
         .then(res=>res.json())
         .then(data=>setTopCourses(data))
         .catch(err=>{
@@ -51,7 +51,7 @@ const useCourses = () => {
 
     // get courses by instructor
     useEffect(()=>{
-        fetch(`http://localhost:5000/coursesByInstructor?email=${user?.email}`)
+        fetch(`https://sports-camp-server-neon.vercel.app/coursesByInstructor?email=${user?.email}`)
         .then(res=>res.json())
         .then(data=>setCoursesByInstructor(data))
         .catch(err=>{
