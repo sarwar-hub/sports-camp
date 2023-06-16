@@ -11,7 +11,7 @@ const AddCourse = () => {
 
     const { register, handleSubmit, reset } = useForm();
     const onSubmit = data => {
-        fetch('https://sports-camp-server-neon.vercel.app/courses', {
+        fetch('http://localhost:5000/courses', {
             method: "POST",
             headers: { 'content-type': 'application/json' },
             body: JSON.stringify(data)
@@ -68,7 +68,7 @@ const AddCourse = () => {
                     <input {...register("email")} className="bg-light dark:bg-deepDark dark:text-light w-full outline-none p-1" type="email" name="email" value={user?.email} placeholder="" required />
                 </div>
                 <div className="flex">
-                    <button type="submit" className="border-[1px] dark:text-light hover:bg-dark/30 hover:bg-deepDark border-dark dark:border-light py-1 text-center px-2">Add The Course</button>
+                    <button type="submit" className="border-[1px] dark:text-light hover:text-light hover:bg-dark/30 hover:bg-deepDark border-dark dark:border-light py-1 text-center px-2">Add The Course</button>
                 </div>
             </form>
         </div>

@@ -30,7 +30,7 @@ const Checkout = () => {
     //send price and get secret key
     useEffect(() => {
         if (price > 0) {
-            fetch('https://sports-camp-server-neon.vercel.app/create-payment-intent', {
+            fetch('http://localhost:5000/create-payment-intent', {
                 method: 'POST',
                 headers: { 'content-type': 'application/json' },
                 body: JSON.stringify({ price: price })
@@ -115,7 +115,7 @@ const Checkout = () => {
                 instructorName: selectedItem.instructorName,
                 time: new Date()
             }
-            fetch('https://sports-camp-server-neon.vercel.app/enrolledCourses', {
+            fetch('http://localhost:5000/enrolledCourses', {
                 method: 'POST',
                 headers: {'content-type': 'application/json'},
                 body: JSON.stringify(paymentInfo)

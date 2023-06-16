@@ -7,7 +7,7 @@ const useEnrolled = () => {
 
     // normal system to get data from database
     useEffect(()=>{
-        fetch(`https://sports-camp-server-neon.vercel.app/enrolledCourses?email=${user?.email}`)
+        fetch(`http://localhost:5000/enrolledCourses?email=${user?.email}`)
         .then(res=>res.json())
         .then(data=> setEnrolledCourses(data))
         .catch(err=>{

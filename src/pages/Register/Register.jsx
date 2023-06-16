@@ -40,7 +40,7 @@ const Register = () => {
             await updateNamePhoto(data.name, data.photo);
 
             const userInfo = { name: data.name, email: data.email, photo: data.photo, role: 'student' };
-            fetch('https://sports-camp-server-neon.vercel.app/users', {
+            fetch('http://localhost:5000/users', {
                 method: 'POST',
                 headers: { 'content-type': 'application/json' },
                 body: JSON.stringify(userInfo)

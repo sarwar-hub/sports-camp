@@ -8,7 +8,7 @@ const googleProvider = new GoogleAuthProvider();
 const AuthProvider = ({children}) => {
     // user state
     const [user, setUser] = useState({});
-    const [loader, setLoader] = useState(true);
+    const [loader, setLoader] = useState(false);
     
     
 
@@ -17,7 +17,7 @@ const AuthProvider = ({children}) => {
         const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
             setUser(currentUser);
             if(currentUser.email){
-                fetch('https://sports-camp-server-neon.vercel.app/jwt', {
+                fetch('http://localhost:5000/jwt', {
                     method: 'POST',
                     headers: {'content-type': 'application/json'},
                     body: JSON.stringify({email: currentUser?.email})

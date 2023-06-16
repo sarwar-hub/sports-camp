@@ -7,7 +7,7 @@ const CourseRow = ({ course, index }) => {
 
     // approve
     const handleApprove = () => {
-        fetch(`https://sports-camp-server-neon.vercel.app/approve/${course._id}`, {
+        fetch(`http://localhost:5000/approve/${course._id}`, {
             method: 'PATCH',
             headers: { 'content-type': 'application/json' }
         })
@@ -57,7 +57,7 @@ const CourseRow = ({ course, index }) => {
                 const feedback = { feedback: text };
 
                 // deny request
-                fetch(`https://sports-camp-server-neon.vercel.app/deny/${course._id}`, {
+                fetch(`http://localhost:5000/deny/${course._id}`, {
                     method: 'PATCH',
                     headers: { 'content-type': 'application/json' },
                     body: JSON.stringify(feedback)

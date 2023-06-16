@@ -11,7 +11,7 @@ const useSelected = () => {
 
     // normal system to get data from database
     // useEffect(()=>{
-    //     fetch(`https://sports-camp-server-neon.vercel.app/selectedItems?email=${user.email}`)
+    //     fetch(`http://localhost:5000/selectedItems?email=${user.email}`)
     //     .then(res=>res.json())
     //     .then(data=> setSelected(data))
     //     .catch(err=>{
@@ -25,7 +25,7 @@ const useSelected = () => {
     const {data: selectedItemss = [], isLoading, refetch, error } = useQuery({
         queryKey: ['selectedItems', user?.email],
         queryFn: async() =>{
-            const res = await fetch(`https://sports-camp-server-neon.vercel.app/selectedItems?email=${user?.email}`, {
+            const res = await fetch(`http://localhost:5000/selectedItems?email=${user?.email}`, {
                 headers: {
                     authorization: `bearer ${localStorage.getItem('access-token')}`
                 }

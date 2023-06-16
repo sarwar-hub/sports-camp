@@ -8,7 +8,7 @@ import useUser from "../../../hooks/useUser";
 const CourseCard = ({ course }) => {
 
     // current user
-    const [currentUser] = useUser();
+    const [, currentUser, ] = useUser();
 
     // location
     //const location = useLocation();
@@ -22,7 +22,7 @@ const CourseCard = ({ course }) => {
         if (user) {
             // add selected item into database
             const itemInfo = { courseId: course._id, userEmail: user.email, courseName: course.courseName, instructorName: course.instructorName, courseFee: course.courseFee };
-            fetch('https://sports-camp-server-neon.vercel.app/selectedItems', {
+            fetch('http://localhost:5000/selectedItems', {
                 method: 'POST',
                 headers: { 'content-type': 'application/json' },
                 body: JSON.stringify(itemInfo)
@@ -75,7 +75,7 @@ const CourseCard = ({ course }) => {
             </div>
             <div>
                 <button onClick={handleSelectCourse} className={`
-                ${(course.availableSeats == 0 || currentUser.role == 'instructor' || currentUser.role == 'admin')
+                ${(course.availableSeats == 0 || currentUser.role === 'instructor' || currentUser.role === 'admin')
                     && 'btn-disabled'} w-full py-2 bg-deepLight hover:bg-dark hover:text-light dark:bg-deepDark/50 dark:hover:bg-deepDark/90`}>Select the Course</button>
             </div>
         </div>

@@ -21,7 +21,7 @@ const CourseRow = ({ course, index }) => {
             confirmButtonText: 'Yes, delete the Course'
         }).then((result) => {
             if (result.isConfirmed) {
-                fetch(`https://sports-camp-server-neon.vercel.app/selectedCourses/${course._id}`, {
+                fetch(`http://localhost:5000/selectedCourses/${course._id}`, {
                     method: 'DELETE'
                 })
                     .then(res => res.json())
