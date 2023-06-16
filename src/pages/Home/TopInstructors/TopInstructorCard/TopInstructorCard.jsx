@@ -8,7 +8,7 @@ const TopInstructorCard = ({instructor}) => {
             <figure><img src={instructor.photo} alt="instructor photo" /></figure>
             <div className="card-body">
                 <h2 className="card-title">{instructor.name}</h2>
-                <p>Students: {instructor.numberOfStudents}</p>
+                <p>Students: {instructor.students}</p>
             </div>
         </div>
         </Fade>
