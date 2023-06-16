@@ -6,3 +6,5 @@
 + React icons
 + Sweet alert2
 + React awesom reveal
++ React helmet async
++ React stripe

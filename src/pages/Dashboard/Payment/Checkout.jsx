@@ -27,7 +27,7 @@ const Checkout = () => {
     useEffect(()=>{
         fetch('http://localhost:5000/create-payment-intent', {
             method: 'POST',
-            headers: {'content-type': 'application/json'},
+            headers: {'content-type': 'application/json', 'authorization': 'bearer pk_test_51NJ7VQJcLaTHe15wstJuC0WK7LPObiKQOK7ODJaTRDphpRqqGsFgWhBo3DVQab2EIITRKR1vCHQqo7XoZmxI7L9000T91desK3'},
             body: JSON.stringify({price: price})
         })
         .then(res=>res.json())

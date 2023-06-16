@@ -48,6 +48,7 @@ const CourseRow = ({ course, index }) => {
             <th>{index + 1}</th>
             <td>{course.courseName}</td>
             <td>{course.instructorName}</td>
+            <td>{course.courseFee}</td>
             <td className='space-x-2'>
                 <Link to={`/dashboard/payment/${course._id}`}><button className='text-light bg-dark dark:bg-light/10 hover:bg-deepDark dark:hover:bg-deepDark px-3 py-1'>Pay</button></Link>
                 <button onClick={handleDelete} className='text-light bg-red-600 hover:bg-red-700 px-3 py-1'>⨉</button>

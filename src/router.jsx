@@ -15,6 +15,8 @@ import ManageCourses from "./pages/Dashboard/ManageCourses/ManageCourses";
 import ManageUsers from "./pages/Dashboard/ManageUsers/ManageUsers";
 import Error404 from "./pages/Error404/Error404";
 import Payment from "./pages/Dashboard/Payment/Payment";
+import EnrolledCourses from "./pages/Dashboard/EnrolledCourses/EnrolledCourses";
+import PaymentHistory from "./pages/Dashboard/PaymentHistory/PaymentHistory";
 
 
 const router = createBrowserRouter([
@@ -58,11 +60,11 @@ const router = createBrowserRouter([
             },
             {
                 path: 'enrolledCourses',
-                element: ''
+                element: <EnrolledCourses></EnrolledCourses>
             },
             {
                 path: 'paymentHistory',
-                element: ''
+                element: <PaymentHistory></PaymentHistory>
             },
             {
                 path: 'addCourse',

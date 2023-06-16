@@ -32,7 +32,7 @@ const DashboardLayout = () => {
                         <div className='mt-10 ml-2'>
                             <div className='text-dark dark:text-light dark:hover:text-sec hover:translate-x-3 hover:text-sec transition'> <ActiveLink2 to='/dashboard/selectedCourses'><div className='flex items-center gap-x-2 py-2'><FaList></FaList> <span>Selected Courses</span></div></ActiveLink2></div>
                             <div className='text-dark dark:text-light dark:hover:text-sec hover:translate-x-3 hover:text-sec transition'> <ActiveLink2 to='/dashboard/enrolledCourses'><div className='flex items-center gap-x-2 py-2'><FaCheckSquare></FaCheckSquare> <span>Enrolled Courses</span></div></ActiveLink2></div>
-                            <div className='text-dark dark:text-light dark:hover:text-sec hover:translate-x-3 hover:text-sec transition'> <ActiveLink2 to='/dashboard/enrolledCourses'><div className='flex items-center gap-x-2 py-2'><FaCreditCard></FaCreditCard> <span>Payment History</span></div></ActiveLink2></div>
+                            <div className='text-dark dark:text-light dark:hover:text-sec hover:translate-x-3 hover:text-sec transition'> <ActiveLink2 to='/dashboard/paymentHistory'><div className='flex items-center gap-x-2 py-2'><FaCreditCard></FaCreditCard> <span>Payment History</span></div></ActiveLink2></div>
                         </div>
                         <div className='mt-10 ml-2'>
                             <div className='text-dark dark:text-light dark:hover:text-sec hover:translate-x-3 hover:text-sec transition'> <ActiveLink2 to='/dashboard/addCourse'><div className='flex items-center gap-x-2 py-2'><FaPlusSquare></FaPlusSquare> <span>Add New Course</span></div></ActiveLink2></div>
