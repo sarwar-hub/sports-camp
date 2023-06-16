@@ -8,7 +8,7 @@ const UserRow = ({ user, index }) => {
 
     // make instructor
     const makeInstructor = () => {
-        fetch(`http://localhost:5000/makeInstructor/${user._id}`, {
+        fetch(`https://sports-camp-server-neon.vercel.app/makeInstructor/${user._id}`, {
             method: 'PATCH',
             headers: { 'content-type': 'application/json' }
         })
@@ -41,7 +41,7 @@ const UserRow = ({ user, index }) => {
 
     // make admin
     const makeAdmin = () => {
-        fetch(`http://localhost:5000/makeAdmin/${user._id}`, {
+        fetch(`https://sports-camp-server-neon.vercel.app/makeAdmin/${user._id}`, {
             method: 'PATCH',
             headers: { 'content-type': 'application/json' }
         })

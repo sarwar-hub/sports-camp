@@ -22,7 +22,7 @@ const CourseCard = ({ course }) => {
         if (user) {
             // add selected item into database
             const itemInfo = { courseId: course._id, userEmail: user.email, courseName: course.courseName, instructorName: course.instructorName, courseFee: course.courseFee };
-            fetch('http://localhost:5000/selectedItems', {
+            fetch('https://sports-camp-server-neon.vercel.app/selectedItems', {
                 method: 'POST',
                 headers: { 'content-type': 'application/json' },
                 body: JSON.stringify(itemInfo)

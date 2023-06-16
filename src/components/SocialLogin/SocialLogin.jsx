@@ -21,7 +21,7 @@ const SocialLogin = () => {
                 const userInfo = { name: userByGoogle.displayName, email: userByGoogle.email, photo: userByGoogle.photoURL, role: 'student' };
                 
 
-                fetch('http://localhost:5000/users', {
+                fetch('https://sports-camp-server-neon.vercel.app/users', {
                     method: 'POST',
                     headers: { 'content-type': 'application/json' },
                     body: JSON.stringify(userInfo)
