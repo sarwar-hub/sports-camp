@@ -6,14 +6,14 @@ const Footer = () => {
     return (
         <Fade>
         <div className='bg-light dark:bg-dark dark:text-light text-deepDark md:p-8 p-3'>
-            <div className='md:flex max-sm:text-center max-w-[1480px] mx-auto md:justify-between'>
+            <div className='md:flex max-sm:text-center max-sm:gap-y-5 max-w-[1480px] mx-auto md:justify-between'>
                 <div>
                     <h1 className='text-xl uppercase mb-5'>Sports Camp</h1>
                     <p>232 Park road, CA</p>
                     <p>contact@sportscamp.com</p>
                     <p>+621 999 000</p>
                 </div>
-                <div className="flex flex-col">
+                <div className="flex flex-col max-sm:mt-10">
                     <Link className="hover:underline" to='/'>Home</Link>
                     <Link className="hover:underline" to='/courses'>Courses</Link>
                     <Link className="hover:underline" to='/instructor'>Instructor</Link>
