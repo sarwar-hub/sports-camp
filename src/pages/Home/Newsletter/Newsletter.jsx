@@ -8,7 +8,7 @@ const Newsletter = () => {
                 <Fade>
                 <div className="hero-content text-center text-neutral-content">
                     <div className="max-w-md">
-                        <h1 className="mb-5 text-5xl text-deepDark dark:text-light font-bold">Subscribe Now</h1>
+                        <h1 className="mb-5 text-5xl text-dark dark:text-light font-bold">Subscribe Now</h1>
                         <p className="mb-5 text-dark dark:text-light">We'll send you our weekly news.</p>
 
 

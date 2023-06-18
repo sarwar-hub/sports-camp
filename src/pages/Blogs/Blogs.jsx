@@ -1,5 +1,5 @@
 import { Fade } from "react-awesome-reveal";
-import SectionTitle from "../../components/SectionTitle/SectionTitle";
+import PageCover from "../../components/PageCover/PageCover";
 
 
 const Blogs = () => {
@@ -35,7 +35,8 @@ const Blogs = () => {
     ]
     return (
         <>
-            <SectionTitle>Blogs</SectionTitle>
+        <PageCover>Blogs</PageCover>
+        <div className="mx-2 my-5 md:mx-10 md:my-10">
             <div className="grid grid-cols-1 lg:grid-cols-2 lg:gap-20">
                 {
                     blogs.map((blog) =>
@@ -57,6 +58,7 @@ const Blogs = () => {
                 }
 
             </div>
+        </div>
         </>
     );
 };
