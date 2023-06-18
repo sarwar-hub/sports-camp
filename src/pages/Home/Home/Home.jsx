@@ -15,19 +15,19 @@ const Home = () => {
 
             <Banner></Banner>
             <div className="my-16">
-                <div className="mx-2 my-5 md:mx-10 md:my-10">
+                <div className="mx-2 my-5 md:mx-10 md:my-32">
                     <TopCourses></TopCourses>
                 </div>
-                <div className="mx-2 my-5 md:mx-10 md:my-10">
+                <div className="mx-2 my-5 md:mx-10 md:my-32">
                     <TopInstructors></TopInstructors>
                 </div>
-                <div className="mx-2 my-5 md:mx-10 md:my-10">
+                <div className="mx-2 my-5 md:mx-10 md:my-32">
                     <Speciality></Speciality>
                 </div>
-                <div className="mx-2 my-10 md:mx-10 md:my-10">
+                <div className="mx-2 my-10 md:mx-10 md:my-32">
                     <Status></Status>
                 </div>
-                <div className="mx-2 my-5 md:mx-10 md:my-10">
+                <div className="mx-2 my-5 md:mx-10 md:my-32">
                     <Newsletter></Newsletter>
                 </div>
             </div>

@@ -73,7 +73,7 @@ const CourseCard = ({ course }) => {
                     <p>Course fee: ${course.courseFee}</p>
                 </div>
             </div>
-            <div>
+            <div className="mt-auto">
                 <button onClick={handleSelectCourse} className={`
                 ${(course.availableSeats == 0 || currentUser.role === 'instructor' || currentUser.role === 'admin')
                     && 'btn-disabled'} w-full py-2 bg-deepLight hover:bg-dark hover:text-light dark:bg-deepDark/50 dark:hover:bg-deepDark/90`}>Select the Course</button>
