@@ -11,6 +11,13 @@ const Footer = () => {
                     <p>contact@sportscamp.com</p>
                     <p>+621 999 000</p>
                 </div>
+                <div className="flex flex-col">
+                    <Link className="hover:underline" to='/'>Home</Link>
+                    <Link className="hover:underline" to='/courses'>Courses</Link>
+                    <Link className="hover:underline" to='/instructor'>Instructor</Link>
+                    <Link className="hover:underline" to='/blogs'>Blogs</Link>
+                    <Link className="hover:underline" to='/dashboard/home'>Dashboard</Link>
+                </div>
                 <div className="max-sm:mt-10">
                     <h1 className='text-xl uppercase mb-5'>Follow us</h1>
                     <p>Follow us on social media</p>

@@ -9,6 +9,7 @@ const navItems = [
   <li className="dark:text-light text-dark hover:text-deepLight font-semibold transition"><ActiveLink to='/'>Home</ActiveLink></li>,
   <li className="dark:text-light text-dark hover:text-deepLight font-semibold transition"><ActiveLink to='/instructors'>Instructors</ActiveLink></li>,
   <li className="dark:text-light text-dark hover:text-deepLight font-semibold transition"><ActiveLink to='/courses'>Courses</ActiveLink></li>,
+  <li className="dark:text-light text-dark hover:text-deepLight font-semibold transition"><ActiveLink to='/blogs'>Blogs</ActiveLink></li>,
   <li className="dark:text-light text-dark hover:text-deepLight font-semibold transition"><ActiveLink to='/dashboard/home'>Dashboard</ActiveLink></li>,
 ];
 

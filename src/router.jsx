@@ -17,6 +17,7 @@ import Error404 from "./pages/Error404/Error404";
 import Payment from "./pages/Dashboard/Payment/Payment";
 import EnrolledCourses from "./pages/Dashboard/EnrolledCourses/EnrolledCourses";
 import PaymentHistory from "./pages/Dashboard/PaymentHistory/PaymentHistory";
+import Blogs from "./pages/Blogs/Blogs";
 
 
 const router = createBrowserRouter([
@@ -43,6 +44,10 @@ const router = createBrowserRouter([
             {
                 path: 'register',
                 element: <Register></Register>
+            },
+            {
+                path: 'blogs',
+                element: <Blogs></Blogs>
             }
         ]
     },
