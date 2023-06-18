@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import PrimaryBtn from "../../../components/PrimaryBtn/PrimaryBtn";
 import SectionTitle from "../../../components/SectionTitle/SectionTitle";
+import { Fade } from "react-awesome-reveal";
 
 
 const Blog = () => {
@@ -30,25 +31,29 @@ const Blog = () => {
     return (
         <>
             <SectionTitle>Top Blogs</SectionTitle>
+
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-10">
                 {
                     blogs.map((blog) =>
-                        <a href="#">
-                            <div className="card w-full bg-light dark:bg-dark dark:text-light text-deepDark rounded-none shadow-xl">
-                                <figure><img src={blog.thumbnail} alt="course thumb" /></figure>
-                                <div className="card-body">
-                                    <h2 className="card-title">{blog.title}</h2>
-                                    <p className="text-dark/50 dark:text-light/50">By {blog.author}</p>
-                                    <p className="text-dark/50 dark:text-light/50">{blog.time}</p>
-                                    <p className="text-dark dark:text-light">{blog.description.slice(0, 200)}...</p>
+                        <Fade>
+                            <a href="#">
+                                <div className="card w-full bg-light dark:bg-dark dark:text-light text-deepDark rounded-none shadow-xl">
+                                    <figure><img src={blog.thumbnail} alt="course thumb" /></figure>
+                                    <div className="card-body">
+                                        <h2 className="card-title">{blog.title}</h2>
+                                        <p className="text-dark/50 dark:text-light/50">By {blog.author}</p>
+                                        <p className="text-dark/50 dark:text-light/50">{blog.time}</p>
+                                        <p className="text-dark dark:text-light">{blog.description.slice(0, 200)}...</p>
+                                    </div>
                                 </div>
-                            </div>
-                        </a>
+                            </a>
+                        </Fade>
 
                     )
                 }
 
             </div>
+
             <div className="flex justify-center mt-10">
                 <Link to='/blogs'><PrimaryBtn>All blogs</PrimaryBtn></Link>
             </div>

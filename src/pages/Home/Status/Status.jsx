@@ -1,7 +1,9 @@
+import { Fade } from "react-awesome-reveal";
 
 const Status = () => {
     return (
         <div className="">
+            <Fade>
             <div className="stats w-full  stats-vertical lg:stats-horizontal shadow bg-light dark:bg-dark rounded-none">
 
                 <div className="stat place-items-center">
@@ -20,6 +22,7 @@ const Status = () => {
                 </div>
 
             </div>
+            </Fade>
         </div>
     );
 };

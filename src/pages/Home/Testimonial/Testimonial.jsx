@@ -5,6 +5,7 @@ import "swiper/css/pagination";
 import "swiper/css/navigation";
 import { Pagination, Navigation } from "swiper";
 import SectionTitle from "../../../components/SectionTitle/SectionTitle";
+import { Fade } from 'react-awesome-reveal';
 
 
 const Testimonial = () => {
@@ -27,6 +28,7 @@ const Testimonial = () => {
         },
     ]
     return (
+        <Fade>
         <div className="lg:flex justify-between items-center">
             <div className='lg:w-[40%]'>
 
@@ -60,6 +62,7 @@ const Testimonial = () => {
             </Swiper>
             </div>
         </div>
+        </Fade>
     );
 };
 

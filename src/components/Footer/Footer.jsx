@@ -1,8 +1,10 @@
+import { Fade } from "react-awesome-reveal";
 import { FaFacebookF, FaInstagram, FaTwitter } from "react-icons/fa";
 import {Link} from 'react-router-dom';
 
 const Footer = () => {
     return (
+        <Fade>
         <div className='bg-light dark:bg-dark dark:text-light text-deepDark md:p-8 p-3'>
             <div className='md:flex max-sm:text-center max-w-[1480px] mx-auto md:justify-between'>
                 <div>
@@ -31,6 +33,7 @@ const Footer = () => {
             <hr className="my-5 max-w-[1480px] mx-auto"/>
             <p className='text-center'>Copyright 2023 © Sports Camp | All rights reserved</p>
         </div>
+        </Fade>
     );
 };
 

@@ -1,3 +1,4 @@
+import { Fade } from "react-awesome-reveal";
 import SectionTitle from "../../components/SectionTitle/SectionTitle";
 
 
@@ -38,6 +39,7 @@ const Blogs = () => {
             <div className="grid grid-cols-1 lg:grid-cols-2 lg:gap-20">
                 {
                     blogs.map((blog) =>
+                    <Fade>
                         <a href="#">
                             <div className="card w-full bg-light dark:bg-dark dark:text-light text-deepDark rounded-none shadow-xl">
                                 <figure><img src={blog.thumbnail} alt="course thumb" /></figure>
@@ -49,6 +51,7 @@ const Blogs = () => {
                                 </div>
                             </div>
                         </a>
+                    </Fade>
 
                     )
                 }

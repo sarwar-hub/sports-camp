@@ -3,11 +3,13 @@ import icon1 from '../../../assets/icons/nature.png'
 import icon2 from '../../../assets/icons/ball.png'
 import icon3 from '../../../assets/icons/paratute.png'
 import speciality from '../../../assets/speciality.jpg'
+import { Fade } from "react-awesome-reveal";
 
 
 const Speciality = () => {
     return (
         <div className="flex flex-col lg:flex-row gap-y-5 lg:gap-20 justify-between items-center">
+            <Fade>
             <div className="flex flex-col justify-between gap-5 lg:w-[50%]">
                 <SectionTitle>Why Chooose Us</SectionTitle>
                 <p className="text-deepDark dark:text-light w-[300px]">We are providing great lessons by our great instructors which is good enough for you.</p>
@@ -26,6 +28,7 @@ const Speciality = () => {
                     </div>
                 </div>
             </div>
+            </Fade>
             <div className="lg:w-[50%]">
                 <img className="max-h-[500px]" src={speciality} alt="" />
             </div>
