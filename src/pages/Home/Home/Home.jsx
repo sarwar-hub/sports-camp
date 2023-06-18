@@ -5,6 +5,7 @@ import Status from "../Status/Status";
 import TopCourses from "../TopCourses/TopCourses";
 import TopInstructors from "../TopInstructors/TopInstructors";
 import Speciality from "../Speciality/Speciality";
+import Testimonial from "../Testimonial/Testimonial";
 
 
 
@@ -26,6 +27,9 @@ const Home = () => {
                 </div>
                 <div className="mx-2 my-10 md:mx-10 md:my-32">
                     <Status></Status>
+                </div>
+                <div className="mx-2 my-10 md:mx-10 md:my-32">
+                    <Testimonial></Testimonial>
                 </div>
                 <div className="mx-2 my-5 md:mx-10 md:my-32">
                     <Newsletter></Newsletter>
