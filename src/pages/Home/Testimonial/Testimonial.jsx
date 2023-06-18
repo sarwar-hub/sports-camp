@@ -17,7 +17,7 @@ const Testimonial = () => {
         },
         {
             name: 'Alex',
-            image: 'https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=580&q=80',
+            image: 'https://images.unsplash.com/photo-1552642986-ccb41e7059e7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=387&q=80',
             description: 'Our 2 daughters have attended Camp Woodmont for the last 8 years. They haven’t missed a summer, and BEG to stay longer! They absolutely love it and as a parent I couldn’t be more pleased with every experience they’ve had.'
         },
         {
@@ -28,13 +28,14 @@ const Testimonial = () => {
     ]
     return (
         <div className="lg:flex justify-between items-center">
-            <div>
+            <div className='lg:w-[40%]'>
 
-            <SectionTitle>What our Clients Says</SectionTitle>
-            <p className="mb-5 text-dark dark:text-light">Our Clients are very satisfied with us, you can see their talks about us</p>
+                <SectionTitle>What our Clients Says</SectionTitle>
+                <p className="mb-5 text-dark dark:text-light">Our Clients are very satisfied with us, you can see their talks about us.</p>
             </div>
+            <div className='lg:w-[60%]'>
             <Swiper
-                slidesPerView={2}
+                slidesPerView={1}
                 spaceBetween={30}
                 pagination={{
                     clickable: true,
@@ -57,6 +58,7 @@ const Testimonial = () => {
 
 
             </Swiper>
+            </div>
         </div>
     );
 };
