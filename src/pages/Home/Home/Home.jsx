@@ -4,6 +4,7 @@ import Newsletter from "../Newsletter/Newsletter";
 import Status from "../Status/Status";
 import TopCourses from "../TopCourses/TopCourses";
 import TopInstructors from "../TopInstructors/TopInstructors";
+import Speciality from "../Speciality/Speciality";
 
 
 
@@ -21,6 +22,9 @@ const Home = () => {
                     <TopInstructors></TopInstructors>
                 </div>
                 <div className="mx-2 my-5 md:mx-10 md:my-10">
+                    <Speciality></Speciality>
+                </div>
+                <div className="mx-2 my-10 md:mx-10 md:my-10">
                     <Status></Status>
                 </div>
                 <div className="mx-2 my-5 md:mx-10 md:my-10">
